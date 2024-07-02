@@ -1,1 +1,32 @@
-{}
+{
+  "e69dae57-18b9-4100-be67-4eb5e3728272": {
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1694/1.0.1694.3752/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://xebiagroup.sharepoint.com/sites/Project1": {
+        "dataSources": {
+          "Applications": {
+            "tableName": "f4dce118-9bb8-49b0-aa83-30e4476a053a"
+          },
+          "Cedants": {
+            "tableName": "652022ce-d5ba-4c62-8ce5-1a09e1303c54"
+          },
+          "Claim": {
+            "tableName": "f1fe10ab-7c3a-406d-993d-0b950c78d2e4"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Applications",
+      "Cedants",
+      "Claim"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "e69dae57-18b9-4100-be67-4eb5e3728272"
+  }
+}
