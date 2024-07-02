@@ -1,4 +1,7 @@
 "Duplicate As screen.'autoLayout_SplitScreen_ver1.0'":
+    Fill: |-
+        =Color.White
+         'AnnotateInMR.DisplayType'.MSR_Icon:true
 
     ScreenContainer1 As groupContainer.horizontalAutoLayoutContainer:
         Fill: =RGBA(245, 245, 245, 1)
