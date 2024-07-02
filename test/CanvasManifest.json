@@ -100,7 +100,7 @@
       "zeroalltabindexes": true
     },
     "Author": "",
-    "BindingErrorCount": 3,
+    "BindingErrorCount": 0,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -118,7 +118,7 @@
     "ManualOfflineProfileId": "",
     "Name": "Arpit Dummy App",
     "OriginatingVersion": "1.342",
-    "ParserErrorCount": 6,
+    "ParserErrorCount": 0,
     "ShowStatusBar": false
   },
   "PublishInfo": {
