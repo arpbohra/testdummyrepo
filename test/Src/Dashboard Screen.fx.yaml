@@ -1,7 +1,7 @@
-- Dashboard Screen:
+Dashboard Screen:
     Control: Screen
     Children:
-    - conVerticalMainHeaderBodyDS:
+    conVerticalMainHeaderBodyDS:
         Control: GroupContainer
         Variant: verticalAutoLayoutContainer
         Properties:
@@ -11,7 +11,7 @@
           LayoutMode: =LayoutMode.Auto
           Width: =Parent.Width
         Children:
-        - conHeaderDS:
+        conHeaderDS:
             Control: GroupContainer
             Variant: verticalAutoLayoutContainer
             Properties:
@@ -23,7 +23,7 @@
               LayoutMode: =LayoutMode.Auto
               Width: =Parent.Width
             Children:
-            - DSB_Header_1:
+            DSB_Header_1:
                 Control: Component
                 ComponentName: DSB_Header
                 Properties:
@@ -32,7 +32,7 @@
                   Height: |+
                     =Parent.Height
                   Width: =Parent.Width
-        - Container20:
+        Container20:
             Control: GroupContainer
             Variant: verticalAutoLayoutContainer
             Properties:
@@ -40,7 +40,7 @@
               LayoutMode: =LayoutMode.Auto
               LayoutOverflowY: =LayoutOverflow.Scroll
             Children:
-            - conHorizontalKPIDS:
+            conHorizontalKPIDS:
                 Control: GroupContainer
                 Variant: horizontalAutoLayoutContainer
                 Properties:
@@ -62,7 +62,7 @@
                   RadiusTopLeft: =0
                   RadiusTopRight: =0
                 Children:
-                - conWelcomeMessageDS:
+                conWelcomeMessageDS:
                     Control: GroupContainer
                     Variant: verticalAutoLayoutContainer
                     Properties:
@@ -80,13 +80,13 @@
                       RadiusTopRight: =10
                       Width: =Parent.Width*.30
                     Children:
-                    - imgUserInsuaranceDS:
+                    imgUserInsuaranceDS:
                         Control: Image
                         Properties:
                           Image: ='Group 510'
                           Height: =Parent.Height*.85
                           Width: =Parent.Width*.40
-                    - conMessage&ImageDS:
+                    conMessage&ImageDS:
                         Control: GroupContainer
                         Variant: manualLayoutContainer
                         Properties:
@@ -98,14 +98,14 @@
                           RadiusTopRight: =0
                           Width: =Parent.Width*.60
                         Children:
-                        - imgDotsDS:
+                        imgDotsDS:
                             Control: Image
                             Properties:
                               Image: ='Group 375'
                               Height: =57
                               PaddingLeft: =5
                               Y: =12
-                        - lblWelcomeMessageDS:
+                        lblWelcomeMessageDS:
                             Control: Label
                             Properties:
                               Text: |-
@@ -117,7 +117,7 @@
                               Size: =18
                               Width: =Parent.Width
                               Y: =69
-                        - lblUserPostDS:
+                        lblUserPostDS:
                             Control: Label
                             Properties:
                               Text: ="(Underwriting Manager)"
@@ -127,7 +127,7 @@
                               Size: =FrColorTheme.titleStyle.fontSize
                               Width: =Parent.Width*.80
                               Y: =109
-                - conTotalSubmissionsDS:
+                conTotalSubmissionsDS:
                     Control: GroupContainer
                     Variant: verticalAutoLayoutContainer
                     Properties:
@@ -145,7 +145,7 @@
                       RadiusTopRight: =10
                       Width: =Parent.Width*.15
                     Children:
-                    - conKpiImage&CountDS:
+                    conKpiImage&CountDS:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -163,7 +163,7 @@
                           RadiusTopRight: =0
                           Width: =Parent.Width*.55
                         Children:
-                        - imgTotalSubmissionDS:
+                        imgTotalSubmissionDS:
                             Control: Image
                             Properties:
                               Image: ='Group 380'
@@ -174,7 +174,7 @@
                               PaddingRight: =5
                               PaddingTop: =5
                               Width: =60
-                        - lblCountOfTotalSubmissionsDS:
+                        lblCountOfTotalSubmissionsDS:
                             Control: Label
                             Properties:
                               Text: =CountRows(Applications)
@@ -188,7 +188,7 @@
                               Size: =FrColorTheme.Heading1.fontSize
                               Width: =Parent.Width*.80
                               Y: =109
-                        - lblTotalSubmissionDS:
+                        lblTotalSubmissionDS:
                             Control: Label
                             Properties:
                               Text: ="TOTAL SUBMISSIONS"
@@ -199,7 +199,7 @@
                               Size: =FrColorTheme.MenutextStyle.fontSize
                               Width: =Parent.Width
                               Y: =109
-                    - conPercentage&DotsDS:
+                    conPercentage&DotsDS:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -217,20 +217,20 @@
                           RadiusTopRight: =0
                           Width: =Parent.Width*.45
                         Children:
-                        - imgPercentageDS:
+                        imgPercentageDS:
                             Control: Image
                             Properties:
                               Image: ='Group 562'
                               Height: =40
                               Width: =50
-                        - imgDotsVerticalDS:
+                        imgDotsVerticalDS:
                             Control: Image
                             Properties:
                               Image: ='Group 399'
                               Height: =130
                               LayoutMinWidth: =80
                               Width: =80
-                - conNewSubmissionsDS:
+                conNewSubmissionsDS:
                     Control: GroupContainer
                     Variant: verticalAutoLayoutContainer
                     Properties:
@@ -248,7 +248,7 @@
                       RadiusTopRight: =10
                       Width: =Parent.Width*.15
                     Children:
-                    - conNewSubmissionKpiImage&CountDS:
+                    conNewSubmissionKpiImage&CountDS:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -265,7 +265,7 @@
                           RadiusTopRight: =0
                           Width: =Parent.Width*.55
                         Children:
-                        - imgNewSubmissionDS:
+                        imgNewSubmissionDS:
                             Control: Image
                             Properties:
                               Image: ='Group 381'
@@ -275,7 +275,7 @@
                               PaddingRight: =5
                               PaddingTop: =5
                               Width: =60
-                        - lblCountOfNewSubmissionsDS:
+                        lblCountOfNewSubmissionsDS:
                             Control: Label
                             Properties:
                               Text: =CountIf(Applications,DateValue(Created)=DateValue(Now()))
@@ -288,7 +288,7 @@
                               Size: =FrColorTheme.Heading1.fontSize
                               Width: =Parent.Width*.80
                               Y: =109
-                        - lblNewSubmissionDS:
+                        lblNewSubmissionDS:
                             Control: Label
                             Properties:
                               Text: ="NEW SUBMISSIONS"
@@ -298,7 +298,7 @@
                               Size: =FrColorTheme.MenutextStyle.fontSize
                               Width: =Parent.Width
                               Y: =109
-                    - conNewSubmissionPercentage&DotsDS:
+                    conNewSubmissionPercentage&DotsDS:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -316,20 +316,20 @@
                           RadiusTopRight: =0
                           Width: =Parent.Width*.45
                         Children:
-                        - imgPercentageNewSubDS:
+                        imgPercentageNewSubDS:
                             Control: Image
                             Properties:
                               Image: ='Group 562'
                               Height: =40
                               Width: =50
-                        - imgDotsVerticalNewSubDS:
+                        imgDotsVerticalNewSubDS:
                             Control: Image
                             Properties:
                               Image: ='Group 399'
                               Height: =130
                               LayoutMinWidth: =80
                               Width: =80
-                - conAverageTimeToCloseSubmissionDS:
+                conAverageTimeToCloseSubmissionDS:
                     Control: GroupContainer
                     Variant: verticalAutoLayoutContainer
                     Properties:
@@ -347,7 +347,7 @@
                       RadiusTopRight: =10
                       Width: =Parent.Width*.15
                     Children:
-                    - coAverageTimeToCloseSubmissionKpiImage&CountDS:
+                    coAverageTimeToCloseSubmissionKpiImage&CountDS:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -364,7 +364,7 @@
                           RadiusTopRight: =0
                           Width: =Parent.Width*.55
                         Children:
-                        - imgAverageTimeToCloseSubmissionDS:
+                        imgAverageTimeToCloseSubmissionDS:
                             Control: Image
                             Properties:
                               Image: ='Group 383'
@@ -374,7 +374,7 @@
                               PaddingRight: =5
                               PaddingTop: =5
                               Width: =60
-                        - lblCountOfAverageTimeToCloseSubmissionDS:
+                        lblCountOfAverageTimeToCloseSubmissionDS:
                             Control: Label
                             Properties:
                               Text: ="3 Days"
@@ -387,7 +387,7 @@
                               Size: =FrColorTheme.Heading1.fontSize
                               Width: =Parent.Width*.80
                               Y: =109
-                        - lblAverageTimeToCloseSubmissionDS:
+                        lblAverageTimeToCloseSubmissionDS:
                             Control: Label
                             Properties:
                               Text: =Upper("Avg. Time To Close Submission")
@@ -397,7 +397,7 @@
                               Size: =FrColorTheme.MenutextStyle.fontSize
                               Width: =Parent.Width
                               Y: =109
-                    - conAverageTimeToCloseSubmissionPercentage&DotsDS:
+                    conAverageTimeToCloseSubmissionPercentage&DotsDS:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -415,20 +415,20 @@
                           RadiusTopRight: =0
                           Width: =Parent.Width*.45
                         Children:
-                        - imgPercentageAverageTimeDS:
+                        imgPercentageAverageTimeDS:
                             Control: Image
                             Properties:
                               Image: ='Group 562'
                               Height: =40
                               Width: =50
-                        - imgDotsVerticalAverageTimeDS:
+                        imgDotsVerticalAverageTimeDS:
                             Control: Image
                             Properties:
                               Image: ='Group 399'
                               Height: =130
                               LayoutMinWidth: =80
                               Width: =80
-                - conSubmissionsResolutionRateDS:
+                conSubmissionsResolutionRateDS:
                     Control: GroupContainer
                     Variant: verticalAutoLayoutContainer
                     Properties:
@@ -446,7 +446,7 @@
                       RadiusTopRight: =10
                       Width: =Parent.Width*.15
                     Children:
-                    - conSubmissionsResolutionRateKpiImage&PercentageDS:
+                    conSubmissionsResolutionRateKpiImage&PercentageDS:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -463,7 +463,7 @@
                           RadiusTopRight: =0
                           Width: =Parent.Width*.55
                         Children:
-                        - imgSubmissionsResolutionRateDS:
+                        imgSubmissionsResolutionRateDS:
                             Control: Image
                             Properties:
                               Image: ='Group 382'
@@ -473,7 +473,7 @@
                               PaddingRight: =5
                               PaddingTop: =5
                               Width: =60
-                        - lblSubmissionsResolutionRatePercentageDS:
+                        lblSubmissionsResolutionRatePercentageDS:
                             Control: Label
                             Properties:
                               Text: ="98%"
@@ -486,7 +486,7 @@
                               Size: =FrColorTheme.Heading1.fontSize
                               Width: =Parent.Width*.80
                               Y: =109
-                        - lblSubmissionsResolutionRateDS:
+                        lblSubmissionsResolutionRateDS:
                             Control: Label
                             Properties:
                               Text: =Upper("Submissions Resoulution Rate")
@@ -496,7 +496,7 @@
                               Size: =FrColorTheme.MenutextStyle.fontSize
                               Width: =Parent.Width
                               Y: =109
-                    - conSubmissionsResolutionRatePercentage&VertcialDotsDS:
+                    conSubmissionsResolutionRatePercentage&VertcialDotsDS:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -514,20 +514,20 @@
                           RadiusTopRight: =0
                           Width: =Parent.Width*.45
                         Children:
-                        - imgSubmissionsResolutionRatePercentageDS:
+                        imgSubmissionsResolutionRatePercentageDS:
                             Control: Image
                             Properties:
                               Image: ='Group 562'
                               Height: =40
                               Width: =50
-                        - conSubmissionsResolutionRateDotsVerticalDS:
+                        conSubmissionsResolutionRateDotsVerticalDS:
                             Control: Image
                             Properties:
                               Image: ='Group 399'
                               Height: =130
                               LayoutMinWidth: =80
                               Width: =80
-            - conHorizonatalBodyDS:
+            conHorizonatalBodyDS:
                 Control: GroupContainer
                 Variant: horizontalAutoLayoutContainer
                 Properties:
@@ -537,7 +537,7 @@
                   Height: =900
                   LayoutMode: =LayoutMode.Auto
                 Children:
-                - conMainMySubmissionsDS:
+                conMainMySubmissionsDS:
                     Control: GroupContainer
                     Variant: verticalAutoLayoutContainer
                     Properties:
@@ -556,7 +556,7 @@
                       RadiusTopLeft: =0
                       RadiusTopRight: =0
                     Children:
-                    - conMySubmissionsDS:
+                    conMySubmissionsDS:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -577,7 +577,7 @@
                           RadiusTopLeft: =10
                           RadiusTopRight: =10
                         Children:
-                        - galRecentActivityDS_1:
+                        galRecentActivityDS_1:
                             Control: Gallery
                             Variant: galleryVertical
                             Properties:
@@ -594,7 +594,7 @@
                               TemplateSize: =180
                               Width: =Parent.Width
                             Children:
-                            - Button2:
+                            Button2:
                                 Control: Classic/Button
                                 Properties:
                                   OnSelect: "=Navigate('Submissions Summary Screen',ScreenTransition.None,{gblSelectedSubmission:ThisItem});\r\nSet(gblSelectedSubmission1,ThisItem);\r\nSet(MilestoneSelectedSubmission,ThisItem);\r\nSet(VarSelectedTab,\"Submission Details\");\r\nClearCollect(ColTask,[\r\n    {\r\n        StageValue:1,\r\n        Name: \"Data Collection\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"System\",\r\n        NavigateTo:'Submissions Summary Screen'\r\n\r\n        \r\n    },\r\n    {\r\n        StageValue:2,\r\n        Name: \"Submission Review \",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Underwriting Manager\",\r\n        NavigateTo:'Submission Review'\r\n        \r\n    },\r\n    {\r\n        StageValue:3,\r\n        Name: \"Risk Analysis\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Risk Manager\",\r\n        NavigateTo:'Risk Analysis'\r\n        \r\n    },\r\n     {\r\n        StageValue:4,\r\n        Name: \"Financial Analysis\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Finance Team\",\r\n        NavigateTo:'Financial Analysis'\r\n        \r\n    },\r\n    {\r\n        StageValue:5,\r\n        Name: \"Technical Evaluation\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Shakti Singh\",\r\n        NavigateTo:'Technicial Evaluation'\r\n        \r\n    },\r\n    {\r\n        StageValue:6,\r\n        Name: \"Pricing & Terms\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Reinsurance Underwriter\",\r\n        NavigateTo:'Pricing Screen'\r\n        \r\n    },\r\n    {\r\n        StageValue:7,\r\n        Name: \"Compliance Check\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Compliance Team\",\r\n        NavigateTo:'Compliance Screen'\r\n        \r\n    },\r\n    {\r\n        StageValue:8,\r\n        Name: \"Final Decision\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Cheif Underwriter\",\r\n        NavigateTo:'Final Decision'\r\n        \r\n    }\r\n]);"
@@ -612,7 +612,7 @@
                                   HoverColor: =RGBA(0, 0, 0, 0)
                                   HoverFill: =
                                   Width: =galRecentActivityDS_1.TemplateWidth
-                            - conActivityGalDataDS_1:
+                            conActivityGalDataDS_1:
                                 Control: GroupContainer
                                 Variant: verticalAutoLayoutContainer
                                 Properties:
@@ -637,7 +637,7 @@
                                   X: =(Parent.TemplateWidth-Self.Width)/2
                                   Y: =(Parent.TemplateHeight-Self.Height)/2
                                 Children:
-                                - conActivityId&TagDS:
+                                conActivityId&TagDS:
                                     Control: GroupContainer
                                     Variant: horizontalAutoLayoutContainer
                                     Properties:
@@ -654,7 +654,7 @@
                                       RadiusTopRight: =0
                                       Width: =Parent.Width
                                     Children:
-                                    - lblActivityIdDS_1:
+                                    lblActivityIdDS_1:
                                         Control: Label
                                         Properties:
                                           OnSelect: =
@@ -666,7 +666,7 @@
                                           Height: =20
                                           Size: |+
                                             =FrColorTheme.labeltextStyle.fontSize
-                                    - Container10_6:
+                                    Container10_6:
                                         Control: GroupContainer
                                         Variant: manualLayoutContainer
                                         Properties:
@@ -681,7 +681,7 @@
                                           RadiusTopRight: =8
                                           Width: =If(Label2_72.Text="New",50,Len(Label2_72.Text)*9.8)
                                         Children:
-                                        - Label2_72:
+                                        Label2_72:
                                             Control: Label
                                             Properties:
                                               Text: =ThisItem.Status.Value
@@ -692,7 +692,7 @@
                                               Width: =Parent.Width
                                               X: =(Parent.Width-Self.Width)/2
                                               Y: =(Parent.Height-Self.Height)/2
-                                - Container57:
+                                Container57:
                                     Control: GroupContainer
                                     Variant: horizontalAutoLayoutContainer
                                     Properties:
@@ -701,7 +701,7 @@
                                       Height: =40
                                       LayoutMode: =LayoutMode.Auto
                                     Children:
-                                    - lblActivityDateDS_1:
+                                    lblActivityDateDS_1:
                                         Control: Label
                                         Properties:
                                           OnSelect: =
@@ -712,7 +712,7 @@
                                           Size: =FrColorTheme.galLabel.fontSize
                                           Width: =Parent.Width*.90
                                           Y: =lblActivityIdDS_1.Height
-                                    - lblActivityDateDS_3:
+                                    lblActivityDateDS_3:
                                         Control: Label
                                         Properties:
                                           OnSelect: =
@@ -725,7 +725,7 @@
                                           Size: =FrColorTheme.galLabel.fontSize
                                           Width: =Parent.Width*.90
                                           Y: =lblActivityIdDS_1.Height
-                                - Container41:
+                                Container41:
                                     Control: GroupContainer
                                     Variant: horizontalAutoLayoutContainer
                                     Properties:
@@ -734,7 +734,7 @@
                                       Height: =30
                                       LayoutMode: =LayoutMode.Auto
                                     Children:
-                                    - lblCountOfTotalSubmissionsDS_1:
+                                    lblCountOfTotalSubmissionsDS_1:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'Coverage Amount'
@@ -750,7 +750,7 @@
                                           Size: =FrColorTheme.galLabel.fontSize
                                           Width: =Parent.Width*.80
                                           Y: =109
-                                    - lblCountOfTotalSubmissionsDS_2:
+                                    lblCountOfTotalSubmissionsDS_2:
                                         Control: Label
                                         Properties:
                                           Text: =Upper(ThisItem.'Type of Reinsurance ')
@@ -767,7 +767,7 @@
                                           Size: =FrColorTheme.galLabel.fontSize
                                           Width: =Parent.Width*.80
                                           Y: =109
-                                - conHorizontalProfileDS:
+                                conHorizontalProfileDS:
                                     Control: GroupContainer
                                     Variant: horizontalAutoLayoutContainer
                                     Properties:
@@ -781,7 +781,7 @@
                                       RadiusTopLeft: =0
                                       RadiusTopRight: =0
                                     Children:
-                                    - imgTotalSubmissionDS_1:
+                                    imgTotalSubmissionDS_1:
                                         Control: Image
                                         Properties:
                                           Image: ='USER-IMAGE'
@@ -796,7 +796,7 @@
                                           Width: |-
                                             =//Parent.Width*.12
                                             40
-                                    - lblActivityDateDS_2:
+                                    lblActivityDateDS_2:
                                         Control: Label
                                         Properties:
                                           OnSelect: =
@@ -807,7 +807,7 @@
                                           Size: =FrColorTheme.galLabel.fontSize
                                           Width: =Parent.Width*.55
                                           Y: =lblActivityIdDS_1.Height
-                                    - lblDateActivityDS_1:
+                                    lblDateActivityDS_1:
                                         Control: Label
                                         Properties:
                                           OnSelect: =
@@ -823,7 +823,7 @@
                                             =FrColorTheme.labeltextStyle.fontSize
                                           Width: =Parent.Width*.25
                                           Y: =
-                        - conHeaderMySubmissionDS:
+                        conHeaderMySubmissionDS:
                             Control: GroupContainer
                             Variant: horizontalAutoLayoutContainer
                             Properties:
@@ -843,7 +843,7 @@
                               RadiusTopRight: =0
                               Width: =Parent.Width*.95
                             Children:
-                            - lblRecentActivityDS_1:
+                            lblRecentActivityDS_1:
                                 Control: Label
                                 Properties:
                                   Text: ="SUBMISSION ASSIGNED TO ME "
@@ -857,7 +857,7 @@
                                   VerticalAlign: =VerticalAlign.Bottom
                                   Width: =Parent.Width*.80
                                   X: =
-                            - btnViewAllDS_1:
+                            btnViewAllDS_1:
                                 Control: Classic/Button
                                 Properties:
                                   OnSelect: =Navigate('Submissions Screen')
@@ -873,7 +873,7 @@
                                   PressedFill: =Self.Fill
                                   Size: =12
                                   Width: =100
-                            - Icon2:
+                            Icon2:
                                 Control: Classic/Icon
                                 Variant: Reload
                                 Properties:
@@ -882,7 +882,7 @@
                                   Height: =25
                                   Icon: =Icon.Reload
                                   Width: =30
-                    - conAllSubmissinsSS_1:
+                    conAllSubmissinsSS_1:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -905,7 +905,7 @@
                           Visible: =false
                           Width: =Parent.Width-60
                         Children:
-                        - Gallery2_1:
+                        Gallery2_1:
                             Control: Gallery
                             Variant: galleryVertical
                             Properties:
@@ -920,7 +920,7 @@
                               TemplateSize: =55
                               Width: =Container8_1.Width
                             Children:
-                            - Container9_1:
+                            Container9_1:
                                 Control: GroupContainer
                                 Variant: horizontalAutoLayoutContainer
                                 Properties:
@@ -940,7 +940,7 @@
                                   Width: =Gallery2_1.TemplateWidth
                                   Y: =(Gallery2_1.TemplateHeight-Self.Height)/2
                                 Children:
-                                - Label2_38:
+                                Label2_38:
                                     Control: Label
                                     Properties:
                                       Text: ="328378"&ThisItem.'Case ID'
@@ -950,7 +950,7 @@
                                       LayoutMinWidth: =80
                                       Size: =10
                                       Width: =Label2_29.Width
-                                - Label2_39:
+                                Label2_39:
                                     Control: Label
                                     Properties:
                                       Text: |-
@@ -962,7 +962,7 @@
                                       LayoutMinWidth: =400
                                       Size: =10
                                       Width: =Label2_30.Width
-                                - Container15:
+                                Container15:
                                     Control: GroupContainer
                                     Variant: manualLayoutContainer
                                     Properties:
@@ -975,7 +975,7 @@
                                       RadiusTopRight: =0
                                       Width: =Label2_31.Width
                                     Children:
-                                    - Image4_2:
+                                    Image4_2:
                                         Control: Image
                                         Properties:
                                           Image: ='Mask group (2)'
@@ -986,7 +986,7 @@
                                           RadiusTopRight: =100
                                           Width: =Self.Height
                                           Y: =13
-                                    - Label2_40:
+                                    Label2_40:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'Created By'.Email
@@ -997,7 +997,7 @@
                                           Width: =Parent.Width*.80
                                           X: =Image4_2.Width
                                           Y: =10
-                                - Label2_43:
+                                Label2_43:
                                     Control: Label
                                     Properties:
                                       Text: =Text(ThisItem.Created,"dd/mm/yyyy")
@@ -1007,7 +1007,7 @@
                                       PaddingLeft: =20
                                       Size: =10
                                       Width: =Label2_32.Width
-                                - Container10_5:
+                                Container10_5:
                                     Control: GroupContainer
                                     Variant: manualLayoutContainer
                                     Properties:
@@ -1022,7 +1022,7 @@
                                       RadiusTopRight: =8
                                       Width: =Label2_64.Width-10
                                     Children:
-                                    - Label2_71:
+                                    Label2_71:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.Priority.Value
@@ -1034,7 +1034,7 @@
                                           Width: =Parent.Width
                                           X: =(Parent.Width-Self.Width)/2
                                           Y: =(Parent.Height-Self.Height)/2
-                                - Container58:
+                                Container58:
                                     Control: GroupContainer
                                     Variant: horizontalAutoLayoutContainer
                                     Properties:
@@ -1045,7 +1045,7 @@
                                       LayoutMode: =LayoutMode.Auto
                                       Width: =Label2_36.Width-10
                                     Children:
-                                    - Container10_1:
+                                    Container10_1:
                                         Control: GroupContainer
                                         Variant: manualLayoutContainer
                                         Properties:
@@ -1059,7 +1059,7 @@
                                           RadiusTopRight: =8
                                           Width: =100
                                         Children:
-                                        - Label2_45:
+                                        Label2_45:
                                             Control: Label
                                             Properties:
                                               Text: =ThisItem.Status.Value
@@ -1072,7 +1072,7 @@
                                               Width: =Parent.Width
                                               X: =(Parent.Width-Self.Width)/2
                                               Y: =(Parent.Height-Self.Height)/2
-                                - Icon1_1:
+                                Icon1_1:
                                     Control: Classic/Icon
                                     Variant: ChevronLeft
                                     Properties:
@@ -1080,7 +1080,7 @@
                                       Height: =20
                                       Icon: =Icon.More
                                       Width: =20
-                        - conHeaderMySubmissionDS_1:
+                        conHeaderMySubmissionDS_1:
                             Control: GroupContainer
                             Variant: horizontalAutoLayoutContainer
                             Properties:
@@ -1100,7 +1100,7 @@
                               RadiusTopLeft: =0
                               RadiusTopRight: =0
                             Children:
-                            - lblRecentActivityDS_3:
+                            lblRecentActivityDS_3:
                                 Control: Label
                                 Properties:
                                   Text: ="MY TASKS"
@@ -1113,7 +1113,7 @@
                                   VerticalAlign: =VerticalAlign.Bottom
                                   Width: =Parent.Width*.80
                                   X: =
-                            - btnViewAllDS:
+                            btnViewAllDS:
                                 Control: Classic/Button
                                 Properties:
                                   OnSelect: =Navigate('Tasks Screen')
@@ -1130,7 +1130,7 @@
                                   PressedFill: =Self.Fill
                                   Size: =12
                                   Width: =100
-                            - Icon2_1:
+                            Icon2_1:
                                 Control: Classic/Icon
                                 Variant: Reload
                                 Properties:
@@ -1139,7 +1139,7 @@
                                   Height: =25
                                   Icon: =Icon.Reload
                                   Width: =30
-                        - Container8_1:
+                        Container8_1:
                             Control: GroupContainer
                             Variant: horizontalAutoLayoutContainer
                             Properties:
@@ -1162,7 +1162,7 @@
                               X: =40
                               Y: =40
                             Children:
-                            - Label2_29:
+                            Label2_29:
                                 Control: Label
                                 Properties:
                                   Text: ="TASK ID"
@@ -1172,7 +1172,7 @@
                                   LayoutMinWidth: =80
                                   Size: =11
                                   Width: =Parent.Width*.10
-                            - Label2_30:
+                            Label2_30:
                                 Control: Label
                                 Properties:
                                   Text: ="TASK DESCRIPTION"
@@ -1182,7 +1182,7 @@
                                   LayoutMinWidth: =410
                                   Size: =11
                                   Width: =Parent.Width*.25
-                            - Label2_31:
+                            Label2_31:
                                 Control: Label
                                 Properties:
                                   Text: ="ASSIGNED BY"
@@ -1192,7 +1192,7 @@
                                   LayoutMinWidth: =200
                                   Size: =11
                                   Width: =Parent.Width*.18
-                            - Label2_32:
+                            Label2_32:
                                 Control: Label
                                 Properties:
                                   Text: ="DUE DATE"
@@ -1204,7 +1204,7 @@
                                   LayoutMinWidth: =180
                                   Size: =11
                                   Width: =Parent.Width*.11
-                            - Label2_64:
+                            Label2_64:
                                 Control: Label
                                 Properties:
                                   Text: ="PRIORITY"
@@ -1213,7 +1213,7 @@
                                   FontWeight: =FontWeight.Semibold
                                   Size: =11
                                   Width: =Parent.Width*.10
-                            - Label2_36:
+                            Label2_36:
                                 Control: Label
                                 Properties:
                                   Text: ="STATUS"
@@ -1223,7 +1223,7 @@
                                   PaddingLeft: =20
                                   Size: =11
                                   Width: =Parent.Width*.15
-                    - conAllSubmissinsSS_4:
+                    conAllSubmissinsSS_4:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -1247,7 +1247,7 @@
                           RadiusTopRight: =20
                           Width: =Parent.Width-60
                         Children:
-                        - conHeaderMySubmissionDS_4:
+                        conHeaderMySubmissionDS_4:
                             Control: GroupContainer
                             Variant: horizontalAutoLayoutContainer
                             Properties:
@@ -1268,7 +1268,7 @@
                               RadiusTopLeft: =0
                               RadiusTopRight: =0
                             Children:
-                            - lblRecentActivityDS_9:
+                            lblRecentActivityDS_9:
                                 Control: Label
                                 Properties:
                                   Text: ="TREATY REQUESTS"
@@ -1284,7 +1284,7 @@
                                   Size: =FrColorTheme.titleStyle.fontSize
                                   Width: =Parent.Width*.80
                                   X: =
-                            - btnViewAllDS_72:
+                            btnViewAllDS_72:
                                 Control: Classic/Button
                                 Properties:
                                   OnSelect: =Navigate('Tasks Screen')
@@ -1306,7 +1306,7 @@
                                   Size: =12
                                   Visible: =false
                                   Width: =150
-                            - Icon2_4:
+                            Icon2_4:
                                 Control: Classic/Icon
                                 Variant: Reload
                                 Properties:
@@ -1315,14 +1315,14 @@
                                   Height: =25
                                   Icon: =Icon.Reload
                                   Width: =30
-                        - Rectangle2_13:
+                        Rectangle2_13:
                             Control: Rectangle
                             Properties:
                               AlignInContainer: =AlignInContainer.Center
                               Fill: =FrColorTheme.primaryColor
                               Height: =2
                               Width: =Parent.Width*.98
-                        - Container26_2:
+                        Container26_2:
                             Control: GroupContainer
                             Variant: verticalAutoLayoutContainer
                             Properties:
@@ -1335,7 +1335,7 @@
                               RadiusTopLeft: =0
                               RadiusTopRight: =0
                             Children:
-                            - Gallery2_7:
+                            Gallery2_7:
                                 Control: Gallery
                                 Variant: galleryVertical
                                 Properties:
@@ -1352,7 +1352,7 @@
                                   TemplateSize: =55
                                   Width: =Container8_8.Width
                                 Children:
-                                - Button2_17:
+                                Button2_17:
                                     Control: Classic/Button
                                     Properties:
                                       OnSelect: "=Set(TREATY,ThisItem);\r\nNavigate(Screen1);\r\nClearCollect(ColTask,[\r\n    {\r\n        StageValue:1,\r\n        Name: \"Data Collection\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Junior Underwriter\",\r\n        NavigateTo:Screen1\r\n\r\n        \r\n    },\r\n    {\r\n        StageValue:2,\r\n        Name: \"Risk Assessment \",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Senior Underwriter\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n    {\r\n        StageValue:3,\r\n        Name: \"Price Modeling\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Actuary\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n     {\r\n        StageValue:4,\r\n        Name: \"Peer Review\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Peer Underwriter\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n    {\r\n        StageValue:5,\r\n        Name: \"Negotiation\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Senior Underwriter\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n    {\r\n        StageValue:6,\r\n        Name: \"Final Approval\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Chief Underwriter\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n    {\r\n        StageValue:7,\r\n        Name: \"Documentation\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"UnderWriting Assistant\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n    {\r\n        StageValue:8,\r\n        Name: \"Final Decision\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Cheif Underwriter\",\r\n        NavigateTo:Screen1\r\n        \r\n    }\r\n]);\r\n"
@@ -1369,13 +1369,13 @@
                                       HoverColor: =RGBA(0, 0, 0, 0)
                                       HoverFill: =
                                       Width: =Gallery2_7.TemplateWidth
-                                - Rectangle2_15:
+                                Rectangle2_15:
                                     Control: Rectangle
                                     Properties:
                                       Fill: =ColorValue("#cccccc")
                                       Height: =1
                                       Width: =Parent.Width
-                                - Container9_28:
+                                Container9_28:
                                     Control: GroupContainer
                                     Variant: horizontalAutoLayoutContainer
                                     Properties:
@@ -1396,7 +1396,7 @@
                                       Width: =Gallery2_7.TemplateWidth
                                       Y: =(Gallery2_7.TemplateHeight-Self.Height)/2
                                     Children:
-                                    - Label2_246:
+                                    Label2_246:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'Request ID'
@@ -1406,7 +1406,7 @@
                                           LayoutMinWidth: =80
                                           Size: =10
                                           Width: =Label2_42.Width
-                                    - Label2_247:
+                                    Label2_247:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'Cedent Name'
@@ -1416,7 +1416,7 @@
                                           LayoutMinWidth: =400
                                           Size: =10
                                           Width: =Label2_46.Width
-                                    - Label2_248:
+                                    Label2_248:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'Treaty Name'
@@ -1425,7 +1425,7 @@
                                           FontWeight: =FontWeight.Semibold
                                           Size: =10
                                           Width: =Label2_190.Width
-                                    - Label2_249:
+                                    Label2_249:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.LOB
@@ -1434,7 +1434,7 @@
                                           FontWeight: =FontWeight.Semibold
                                           Size: =10
                                           Width: =Label2_191.Width
-                                    - Label2_250:
+                                    Label2_250:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'Coverage Limit (Per Event)'
@@ -1444,7 +1444,7 @@
                                           LayoutMinWidth: =80
                                           Size: =10
                                           Width: =Label2_192.Width
-                                    - Container23_4:
+                                    Container23_4:
                                         Control: GroupContainer
                                         Variant: horizontalAutoLayoutContainer
                                         Properties:
@@ -1455,7 +1455,7 @@
                                           LayoutMode: =LayoutMode.Auto
                                           Width: =Label2_237.Width
                                         Children:
-                                        - Container10_8:
+                                        Container10_8:
                                             Control: GroupContainer
                                             Variant: manualLayoutContainer
                                             Properties:
@@ -1471,7 +1471,7 @@
                                               RadiusTopRight: =8
                                               Width: =100
                                             Children:
-                                            - Label2_245:
+                                            Label2_245:
                                                 Control: Label
                                                 Properties:
                                                   Text: =ThisItem.Status.Value
@@ -1482,7 +1482,7 @@
                                                   Width: =Parent.Width
                                                   X: =(Parent.Width-Self.Width)/2
                                                   Y: =(Parent.Height-Self.Height)/2
-                                    - Label2_251:
+                                    Label2_251:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'# Policies'
@@ -1492,7 +1492,7 @@
                                           LayoutMinWidth: =80
                                           Size: =10
                                           Width: =Label2_238.Width
-                                    - Label2_252:
+                                    Label2_252:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'Effective Date'
@@ -1502,7 +1502,7 @@
                                           LayoutMinWidth: =80
                                           Size: =10
                                           Width: =Label2_239.Width
-                                    - Label2_253:
+                                    Label2_253:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.Exclusions
@@ -1512,7 +1512,7 @@
                                           LayoutMinWidth: =80
                                           Size: =10
                                           Width: =Label2_240.Width
-                                    - Label2_254:
+                                    Label2_254:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'End Date'
@@ -1522,7 +1522,7 @@
                                           LayoutMinWidth: =80
                                           Size: =10
                                           Width: =Label2_241.Width
-                                    - Label2_255:
+                                    Label2_255:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'Retention Amount (Per Event)'
@@ -1532,7 +1532,7 @@
                                           LayoutMinWidth: =80
                                           Size: =10
                                           Width: =Label2_242.Width
-                                    - Label2_256:
+                                    Label2_256:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'Reinsurance Premium'
@@ -1542,7 +1542,7 @@
                                           LayoutMinWidth: =80
                                           Size: =10
                                           Width: =Label2_243.Width
-                                    - Label2_257:
+                                    Label2_257:
                                         Control: Label
                                         Properties:
                                           Text: =ThisItem.'Risk Score'
@@ -1552,7 +1552,7 @@
                                           LayoutMinWidth: =80
                                           Size: =10
                                           Width: =Label2_244.Width
-                            - Container8_8:
+                            Container8_8:
                                 Control: GroupContainer
                                 Variant: horizontalAutoLayoutContainer
                                 Properties:
@@ -1576,7 +1576,7 @@
                                   X: =40
                                   Y: =40
                                 Children:
-                                - Label2_42:
+                                Label2_42:
                                     Control: Label
                                     Properties:
                                       Text: ="ID"
@@ -1589,7 +1589,7 @@
                                       LineHeight: =1
                                       Size: =10
                                       Width: =75
-                                - Label2_46:
+                                Label2_46:
                                     Control: Label
                                     Properties:
                                       Text: ="CEDENT NAME"
@@ -1602,7 +1602,7 @@
                                       LineHeight: =1
                                       Size: =10
                                       Width: =200
-                                - Label2_190:
+                                Label2_190:
                                     Control: Label
                                     Properties:
                                       Text: ="TREATY NAME"
@@ -1614,7 +1614,7 @@
                                       LayoutMinWidth: =200
                                       LineHeight: =1
                                       Size: =10
-                                - Label2_191:
+                                Label2_191:
                                     Control: Label
                                     Properties:
                                       Text: ="LINE OF BUSINESS"
@@ -1629,7 +1629,7 @@
                                       LineHeight: =1
                                       Size: =10
                                       Width: =200
-                                - Label2_192:
+                                Label2_192:
                                     Control: Label
                                     Properties:
                                       Text: ="COVERAGE LIMIT"
@@ -1641,7 +1641,7 @@
                                       LineHeight: =1
                                       Size: =10
                                       Width: =180
-                                - Label2_237:
+                                Label2_237:
                                     Control: Label
                                     Properties:
                                       Text: ="STATUS"
@@ -1653,7 +1653,7 @@
                                       LineHeight: =1
                                       Size: =10
                                       Width: =120
-                                - Label2_238:
+                                Label2_238:
                                     Control: Label
                                     Properties:
                                       Text: ="# POLICIES"
@@ -1664,7 +1664,7 @@
                                       FontWeight: =FontWeight.Bold
                                       LineHeight: =1
                                       Size: =10
-                                - Label2_239:
+                                Label2_239:
                                     Control: Label
                                     Properties:
                                       Text: ="EFFECTIVE DATE"
@@ -1675,7 +1675,7 @@
                                       FontWeight: =FontWeight.Bold
                                       LineHeight: =1
                                       Size: =10
-                                - Label2_240:
+                                Label2_240:
                                     Control: Label
                                     Properties:
                                       Text: ="EXCLUSIONS"
@@ -1687,7 +1687,7 @@
                                       LineHeight: =1
                                       Size: =10
                                       Width: =200
-                                - Label2_241:
+                                Label2_241:
                                     Control: Label
                                     Properties:
                                       Text: ="EXPIRY DATE"
@@ -1698,7 +1698,7 @@
                                       FontWeight: =FontWeight.Bold
                                       LineHeight: =1
                                       Size: =10
-                                - Label2_242:
+                                Label2_242:
                                     Control: Label
                                     Properties:
                                       Text: ="RETENTION"
@@ -1710,7 +1710,7 @@
                                       LineHeight: =1
                                       Size: =10
                                       Width: =180
-                                - Label2_243:
+                                Label2_243:
                                     Control: Label
                                     Properties:
                                       Text: ="REINSURANCE PREMIUM"
@@ -1722,7 +1722,7 @@
                                       LineHeight: =1
                                       Size: =10
                                       Width: =200
-                                - Label2_244:
+                                Label2_244:
                                     Control: Label
                                     Properties:
                                       Text: ="RISK SCORE"
@@ -1734,7 +1734,7 @@
                                       LineHeight: =1
                                       Size: =10
                                       Width: =200
-                - conExpectedDeadline&DueDateDS:
+                conExpectedDeadline&DueDateDS:
                     Control: GroupContainer
                     Variant: verticalAutoLayoutContainer
                     Properties:
@@ -1753,7 +1753,7 @@
                       RadiusTopLeft: =0
                       RadiusTopRight: =0
                     Children:
-                    - conRecentActivityDS_15:
+                    conRecentActivityDS_15:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -1769,7 +1769,7 @@
                           RadiusTopLeft: =10
                           RadiusTopRight: =10
                         Children:
-                        - galRecentActivityDS_5:
+                        galRecentActivityDS_5:
                             Control: Gallery
                             Variant: galleryVertical
                             Properties:
@@ -1784,7 +1784,7 @@
                               TemplateSize: =150
                               Width: =Parent.Width
                             Children:
-                            - conActivityGalDataDS_5:
+                            conActivityGalDataDS_5:
                                 Control: GroupContainer
                                 Variant: verticalAutoLayoutContainer
                                 Properties:
@@ -1803,7 +1803,7 @@
                                   Width: =Parent.Width*.9
                                   X: =(Parent.TemplateWidth-Self.Width)/2
                                 Children:
-                                - lblActivityIdDS_5:
+                                lblActivityIdDS_5:
                                     Control: Label
                                     Properties:
                                       OnSelect: =
@@ -1815,7 +1815,7 @@
                                       Size: |+
                                         =FrColorTheme.labeltextStyle.fontSize
                                       Width: =220
-                                - lblActivityDateDS_6:
+                                lblActivityDateDS_6:
                                     Control: Label
                                     Properties:
                                       OnSelect: =
@@ -1826,7 +1826,7 @@
                                       Size: =FrColorTheme.galLabel.fontSize
                                       Width: =Parent.Width
                                       Y: =lblActivityIdDS_5.Height
-                                - lblActivityIdDS_7:
+                                lblActivityIdDS_7:
                                     Control: Label
                                     Properties:
                                       OnSelect: =
@@ -1838,7 +1838,7 @@
                                       Size: |+
                                         =FrColorTheme.labeltextStyle.fontSize
                                       Width: =200
-                        - lblRecentActivityDS_67:
+                        lblRecentActivityDS_67:
                             Control: Label
                             Properties:
                               Text: ="ALERTS & NOTIFICATIONS"
@@ -1850,7 +1850,7 @@
                               Size: =FrColorTheme.titleStyle.fontSize
                               VerticalAlign: =VerticalAlign.Bottom
                               Width: =Parent.Width
-                        - lbl_RequestIDVal_DS_22:
+                        lbl_RequestIDVal_DS_22:
                             Control: Label
                             Properties:
                               Text: ="TODAY"
@@ -1862,7 +1862,7 @@
                               VerticalAlign: =VerticalAlign.Top
                               Visible: =false
                               Width: =Parent.Width
-                    - conRecentActivityDS_3:
+                    conRecentActivityDS_3:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -1880,7 +1880,7 @@
                           RadiusTopRight: =10
                           Visible: =false
                         Children:
-                        - galRecentActivityDS_4:
+                        galRecentActivityDS_4:
                             Control: Gallery
                             Variant: galleryVertical
                             Properties:
@@ -1895,7 +1895,7 @@
                               TemplateSize: =110
                               Width: =Parent.Width
                             Children:
-                            - conActivityGalDataDS_4:
+                            conActivityGalDataDS_4:
                                 Control: GroupContainer
                                 Variant: verticalAutoLayoutContainer
                                 Properties:
@@ -1915,7 +1915,7 @@
                                   X: =(Parent.TemplateWidth-Self.Width)/2
                                   Y: =10
                                 Children:
-                                - lblActivityIdDS_4:
+                                lblActivityIdDS_4:
                                     Control: Label
                                     Properties:
                                       OnSelect: =
@@ -1926,7 +1926,7 @@
                                       Height: =20
                                       Size: |+
                                         =FrColorTheme.labeltextStyle.fontSize
-                                - lblActivityDateDS_5:
+                                lblActivityDateDS_5:
                                     Control: Label
                                     Properties:
                                       OnSelect: =
@@ -1936,7 +1936,7 @@
                                       Size: =FrColorTheme.galLabel.fontSize
                                       Width: =Parent.Width
                                       Y: =lblActivityIdDS_4.Height
-                        - lblRecentActivityDS_7:
+                        lblRecentActivityDS_7:
                             Control: Label
                             Properties:
                               Text: ="ALERTS"
@@ -1948,7 +1948,7 @@
                               Size: =FrColorTheme.titleStyle.fontSize
                               VerticalAlign: =VerticalAlign.Bottom
                               Width: =Parent.Width
-                        - lbl_RequestIDVal_DS_21:
+                        lbl_RequestIDVal_DS_21:
                             Control: Label
                             Properties:
                               Text: ="TODAY"
@@ -1959,7 +1959,7 @@
                               Size: =11
                               VerticalAlign: =VerticalAlign.Top
                               Width: =Parent.Width
-                    - conRecentActivityDS_4:
+                    conRecentActivityDS_4:
                         Control: GroupContainer
                         Variant: verticalAutoLayoutContainer
                         Properties:
@@ -1977,7 +1977,7 @@
                           RadiusTopRight: =10
                           Visible: =false
                         Children:
-                        - galRecentActivityDS_6:
+                        galRecentActivityDS_6:
                             Control: Gallery
                             Variant: galleryVertical
                             Properties:
@@ -1994,7 +1994,7 @@
                               TemplateSize: =110
                               Width: =Parent.Width
                             Children:
-                            - conActivityGalDataDS_6:
+                            conActivityGalDataDS_6:
                                 Control: GroupContainer
                                 Variant: verticalAutoLayoutContainer
                                 Properties:
@@ -2014,7 +2014,7 @@
                                   X: =(Parent.TemplateWidth-Self.Width)/2
                                   Y: =10
                                 Children:
-                                - lblActivityIdDS_6:
+                                lblActivityIdDS_6:
                                     Control: Label
                                     Properties:
                                       OnSelect: =
@@ -2025,7 +2025,7 @@
                                       Height: =20
                                       Size: |+
                                         =FrColorTheme.labeltextStyle.fontSize
-                                - lblActivityDateDS_7:
+                                lblActivityDateDS_7:
                                     Control: Label
                                     Properties:
                                       OnSelect: =
@@ -2035,7 +2035,7 @@
                                       Size: =FrColorTheme.galLabel.fontSize
                                       Width: =Parent.Width
                                       Y: =lblActivityIdDS_6.Height
-                        - lblRecentActivityDS_13:
+                        lblRecentActivityDS_13:
                             Control: Label
                             Properties:
                               Text: ="RECENT ACTIVITIES"
@@ -2047,7 +2047,7 @@
                               Size: =FrColorTheme.titleStyle.fontSize
                               VerticalAlign: =VerticalAlign.Bottom
                               Width: =Parent.Width
-                        - lbl_RequestIDVal_DS_23:
+                        lbl_RequestIDVal_DS_23:
                             Control: Label
                             Properties:
                               Text: ="TODAY"
