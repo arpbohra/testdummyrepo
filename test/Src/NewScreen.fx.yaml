@@ -1,0 +1,2061 @@
+- Dashboard Screen:
+    Control: Screen
+    Children:
+    - conVerticalMainHeaderBodyDS:
+        Control: GroupContainer
+        Variant: verticalAutoLayoutContainer
+        Properties:
+          Height: =Parent.Height
+          LayoutAlignItems: =LayoutAlignItems.Stretch
+          LayoutDirection: =LayoutDirection.Vertical
+          LayoutMode: =LayoutMode.Auto
+          Width: =Parent.Width
+        Children:
+        - conHeaderDS:
+            Control: GroupContainer
+            Variant: verticalAutoLayoutContainer
+            Properties:
+              AlignInContainer: =AlignInContainer.Start
+              DropShadow: =DropShadow.None
+              FillPortions: =0
+              Height: =80
+              LayoutDirection: =LayoutDirection.Vertical
+              LayoutMode: =LayoutMode.Auto
+              Width: =Parent.Width
+            Children:
+            - DSB_Header_1:
+                Control: Component
+                ComponentName: DSB_Header
+                Properties:
+                  CurrentScreen: ="MY WORKBENCH"
+                  NavItems: =FrNavItems
+                  Height: |+
+                    =Parent.Height
+                  Width: =Parent.Width
+        - Container20:
+            Control: GroupContainer
+            Variant: verticalAutoLayoutContainer
+            Properties:
+              LayoutDirection: =LayoutDirection.Vertical
+              LayoutMode: =LayoutMode.Auto
+              LayoutOverflowY: =LayoutOverflow.Scroll
+            Children:
+            - conHorizontalKPIDS:
+                Control: GroupContainer
+                Variant: horizontalAutoLayoutContainer
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Fill: =FrColorTheme.BackgroundColor
+                  FillPortions: =0
+                  Height: =Parent.Height*.25
+                  LayoutAlignItems: =LayoutAlignItems.End
+                  LayoutGap: =20
+                  LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                  LayoutMode: =LayoutMode.Auto
+                  LayoutOverflowX: =LayoutOverflow.Scroll
+                  LayoutWrap: =true
+                  PaddingBottom: =5
+                  PaddingLeft: =20
+                  PaddingRight: =20
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                - conWelcomeMessageDS:
+                    Control: GroupContainer
+                    Variant: verticalAutoLayoutContainer
+                    Properties:
+                      AlignInContainer: =AlignInContainer.SetByContainer
+                      DropShadow: =DropShadow.None
+                      Fill: =FrColorTheme.primaryColor
+                      FillPortions: =1.5
+                      Height: =Parent.Height*.90
+                      LayoutAlignItems: =LayoutAlignItems.Center
+                      LayoutMinWidth: =20
+                      LayoutMode: =LayoutMode.Auto
+                      RadiusBottomLeft: =10
+                      RadiusBottomRight: =10
+                      RadiusTopLeft: =10
+                      RadiusTopRight: =10
+                      Width: =Parent.Width*.30
+                    Children:
+                    - imgUserInsuaranceDS:
+                        Control: Image
+                        Properties:
+                          Image: ='Group 510'
+                          Height: =Parent.Height*.85
+                          Width: =Parent.Width*.40
+                    - conMessage&ImageDS:
+                        Control: GroupContainer
+                        Variant: manualLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          FillPortions: =0
+                          RadiusBottomLeft: =0
+                          RadiusBottomRight: =0
+                          RadiusTopLeft: =0
+                          RadiusTopRight: =0
+                          Width: =Parent.Width*.60
+                        Children:
+                        - imgDotsDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 375'
+                              Height: =57
+                              PaddingLeft: =5
+                              Y: =12
+                        - lblWelcomeMessageDS:
+                            Control: Label
+                            Properties:
+                              Text: |-
+                                ="Welcome "&First(Split(User().FullName, " ")).Value
+                                &"!"
+                              Color: =ColorValue("#FFFFFF")
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FontWeight.Semibold
+                              Size: =18
+                              Width: =Parent.Width
+                              Y: =69
+                        - lblUserPostDS:
+                            Control: Label
+                            Properties:
+                              Text: ="(Underwriting Manager)"
+                              Color: =ColorValue("#FFFFFF")
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.titleStyle.fontWeight
+                              Size: =FrColorTheme.titleStyle.fontSize
+                              Width: =Parent.Width*.80
+                              Y: =109
+                - conTotalSubmissionsDS:
+                    Control: GroupContainer
+                    Variant: verticalAutoLayoutContainer
+                    Properties:
+                      AlignInContainer: =AlignInContainer.SetByContainer
+                      BorderColor: =FrColorTheme.conBorderColor
+                      BorderThickness: =1
+                      DropShadow: =DropShadow.None
+                      Fill: =RGBA(255, 255, 255, 1)
+                      Height: =Parent.Height*.90
+                      LayoutMinWidth: =20
+                      LayoutMode: =LayoutMode.Auto
+                      RadiusBottomLeft: =10
+                      RadiusBottomRight: =10
+                      RadiusTopLeft: =10
+                      RadiusTopRight: =10
+                      Width: =Parent.Width*.15
+                    Children:
+                    - conKpiImage&CountDS:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          FillPortions: =0
+                          LayoutAlignItems: =LayoutAlignItems.Center
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutGap: =10
+                          LayoutJustifyContent: =LayoutJustifyContent.Center
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingLeft: =20
+                          RadiusBottomLeft: =0
+                          RadiusBottomRight: =0
+                          RadiusTopLeft: =0
+                          RadiusTopRight: =0
+                          Width: =Parent.Width*.55
+                        Children:
+                        - imgTotalSubmissionDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 380'
+                              AlignInContainer: =AlignInContainer.Start
+                              Height: =60
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              Width: =60
+                        - lblCountOfTotalSubmissionsDS:
+                            Control: Label
+                            Properties:
+                              Text: =CountRows(Applications)
+                              AlignInContainer: =AlignInContainer.Start
+                              Color: =FrColorTheme.primaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                              Height: =30
+                              PaddingBottom: =0
+                              PaddingTop: =0
+                              Size: =FrColorTheme.Heading1.fontSize
+                              Width: =Parent.Width*.80
+                              Y: =109
+                        - lblTotalSubmissionDS:
+                            Control: Label
+                            Properties:
+                              Text: ="TOTAL SUBMISSIONS"
+                              AlignInContainer: =AlignInContainer.Start
+                              Color: =FrColorTheme.lightSecondaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                              Size: =FrColorTheme.MenutextStyle.fontSize
+                              Width: =Parent.Width
+                              Y: =109
+                    - conPercentage&DotsDS:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          FillPortions: =0
+                          LayoutAlignItems: =LayoutAlignItems.End
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutJustifyContent: =LayoutJustifyContent.End
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingBottom: =5
+                          PaddingRight: =20
+                          RadiusBottomLeft: =0
+                          RadiusBottomRight: =0
+                          RadiusTopLeft: =0
+                          RadiusTopRight: =0
+                          Width: =Parent.Width*.45
+                        Children:
+                        - imgPercentageDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 562'
+                              Height: =40
+                              Width: =50
+                        - imgDotsVerticalDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 399'
+                              Height: =130
+                              LayoutMinWidth: =80
+                              Width: =80
+                - conNewSubmissionsDS:
+                    Control: GroupContainer
+                    Variant: verticalAutoLayoutContainer
+                    Properties:
+                      AlignInContainer: =AlignInContainer.SetByContainer
+                      BorderColor: =FrColorTheme.conBorderColor
+                      BorderThickness: =1
+                      DropShadow: =DropShadow.None
+                      Fill: =RGBA(255, 255, 255, 1)
+                      Height: =Parent.Height*.90
+                      LayoutMinWidth: =20
+                      LayoutMode: =LayoutMode.Auto
+                      RadiusBottomLeft: =10
+                      RadiusBottomRight: =10
+                      RadiusTopLeft: =10
+                      RadiusTopRight: =10
+                      Width: =Parent.Width*.15
+                    Children:
+                    - conNewSubmissionKpiImage&CountDS:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          FillPortions: =0
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutGap: =10
+                          LayoutJustifyContent: =LayoutJustifyContent.Center
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingLeft: =20
+                          RadiusBottomLeft: =0
+                          RadiusBottomRight: =0
+                          RadiusTopLeft: =0
+                          RadiusTopRight: =0
+                          Width: =Parent.Width*.55
+                        Children:
+                        - imgNewSubmissionDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 381'
+                              Height: =60
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              Width: =60
+                        - lblCountOfNewSubmissionsDS:
+                            Control: Label
+                            Properties:
+                              Text: =CountIf(Applications,DateValue(Created)=DateValue(Now()))
+                              Color: =FrColorTheme.primaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                              Height: =30
+                              PaddingBottom: =0
+                              PaddingTop: =0
+                              Size: =FrColorTheme.Heading1.fontSize
+                              Width: =Parent.Width*.80
+                              Y: =109
+                        - lblNewSubmissionDS:
+                            Control: Label
+                            Properties:
+                              Text: ="NEW SUBMISSIONS"
+                              Color: =FrColorTheme.lightSecondaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                              Size: =FrColorTheme.MenutextStyle.fontSize
+                              Width: =Parent.Width
+                              Y: =109
+                    - conNewSubmissionPercentage&DotsDS:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          FillPortions: =0
+                          LayoutAlignItems: =LayoutAlignItems.End
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutJustifyContent: =LayoutJustifyContent.End
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingBottom: =5
+                          PaddingRight: =20
+                          RadiusBottomLeft: =0
+                          RadiusBottomRight: =0
+                          RadiusTopLeft: =0
+                          RadiusTopRight: =0
+                          Width: =Parent.Width*.45
+                        Children:
+                        - imgPercentageNewSubDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 562'
+                              Height: =40
+                              Width: =50
+                        - imgDotsVerticalNewSubDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 399'
+                              Height: =130
+                              LayoutMinWidth: =80
+                              Width: =80
+                - conAverageTimeToCloseSubmissionDS:
+                    Control: GroupContainer
+                    Variant: verticalAutoLayoutContainer
+                    Properties:
+                      AlignInContainer: =AlignInContainer.SetByContainer
+                      BorderColor: =FrColorTheme.conBorderColor
+                      BorderThickness: =1
+                      DropShadow: =DropShadow.None
+                      Fill: =RGBA(255, 255, 255, 1)
+                      Height: =Parent.Height*.90
+                      LayoutMinWidth: =20
+                      LayoutMode: =LayoutMode.Auto
+                      RadiusBottomLeft: =10
+                      RadiusBottomRight: =10
+                      RadiusTopLeft: =10
+                      RadiusTopRight: =10
+                      Width: =Parent.Width*.15
+                    Children:
+                    - coAverageTimeToCloseSubmissionKpiImage&CountDS:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          FillPortions: =0
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutGap: =10
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingLeft: =20
+                          PaddingTop: =20
+                          RadiusBottomLeft: =0
+                          RadiusBottomRight: =0
+                          RadiusTopLeft: =0
+                          RadiusTopRight: =0
+                          Width: =Parent.Width*.55
+                        Children:
+                        - imgAverageTimeToCloseSubmissionDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 383'
+                              Height: =60
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              Width: =60
+                        - lblCountOfAverageTimeToCloseSubmissionDS:
+                            Control: Label
+                            Properties:
+                              Text: ="3 Days"
+                              Color: =FrColorTheme.primaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                              Height: =30
+                              PaddingBottom: =0
+                              PaddingTop: =0
+                              Size: =FrColorTheme.Heading1.fontSize
+                              Width: =Parent.Width*.80
+                              Y: =109
+                        - lblAverageTimeToCloseSubmissionDS:
+                            Control: Label
+                            Properties:
+                              Text: =Upper("Avg. Time To Close Submission")
+                              Color: =FrColorTheme.lightSecondaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                              Size: =FrColorTheme.MenutextStyle.fontSize
+                              Width: =Parent.Width
+                              Y: =109
+                    - conAverageTimeToCloseSubmissionPercentage&DotsDS:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          FillPortions: =0
+                          LayoutAlignItems: =LayoutAlignItems.End
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutJustifyContent: =LayoutJustifyContent.End
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingBottom: =5
+                          PaddingRight: =20
+                          RadiusBottomLeft: =0
+                          RadiusBottomRight: =0
+                          RadiusTopLeft: =0
+                          RadiusTopRight: =0
+                          Width: =Parent.Width*.45
+                        Children:
+                        - imgPercentageAverageTimeDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 562'
+                              Height: =40
+                              Width: =50
+                        - imgDotsVerticalAverageTimeDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 399'
+                              Height: =130
+                              LayoutMinWidth: =80
+                              Width: =80
+                - conSubmissionsResolutionRateDS:
+                    Control: GroupContainer
+                    Variant: verticalAutoLayoutContainer
+                    Properties:
+                      AlignInContainer: =AlignInContainer.SetByContainer
+                      BorderColor: =FrColorTheme.conBorderColor
+                      BorderThickness: =1
+                      DropShadow: =DropShadow.None
+                      Fill: =RGBA(255, 255, 255, 1)
+                      Height: =Parent.Height*.90
+                      LayoutMinWidth: =20
+                      LayoutMode: =LayoutMode.Auto
+                      RadiusBottomLeft: =10
+                      RadiusBottomRight: =10
+                      RadiusTopLeft: =10
+                      RadiusTopRight: =10
+                      Width: =Parent.Width*.15
+                    Children:
+                    - conSubmissionsResolutionRateKpiImage&PercentageDS:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          FillPortions: =0
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutGap: =10
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingLeft: =20
+                          PaddingTop: =20
+                          RadiusBottomLeft: =0
+                          RadiusBottomRight: =0
+                          RadiusTopLeft: =0
+                          RadiusTopRight: =0
+                          Width: =Parent.Width*.55
+                        Children:
+                        - imgSubmissionsResolutionRateDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 382'
+                              Height: =60
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              Width: =60
+                        - lblSubmissionsResolutionRatePercentageDS:
+                            Control: Label
+                            Properties:
+                              Text: ="98%"
+                              Color: =FrColorTheme.primaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                              Height: =30
+                              PaddingBottom: =0
+                              PaddingTop: =0
+                              Size: =FrColorTheme.Heading1.fontSize
+                              Width: =Parent.Width*.80
+                              Y: =109
+                        - lblSubmissionsResolutionRateDS:
+                            Control: Label
+                            Properties:
+                              Text: =Upper("Submissions Resoulution Rate")
+                              Color: =FrColorTheme.lightSecondaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                              Size: =FrColorTheme.MenutextStyle.fontSize
+                              Width: =Parent.Width
+                              Y: =109
+                    - conSubmissionsResolutionRatePercentage&VertcialDotsDS:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          FillPortions: =0
+                          LayoutAlignItems: =LayoutAlignItems.End
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutJustifyContent: =LayoutJustifyContent.End
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingBottom: =5
+                          PaddingRight: =20
+                          RadiusBottomLeft: =0
+                          RadiusBottomRight: =0
+                          RadiusTopLeft: =0
+                          RadiusTopRight: =0
+                          Width: =Parent.Width*.45
+                        Children:
+                        - imgSubmissionsResolutionRatePercentageDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 562'
+                              Height: =40
+                              Width: =50
+                        - conSubmissionsResolutionRateDotsVerticalDS:
+                            Control: Image
+                            Properties:
+                              Image: ='Group 399'
+                              Height: =130
+                              LayoutMinWidth: =80
+                              Width: =80
+            - conHorizonatalBodyDS:
+                Control: GroupContainer
+                Variant: horizontalAutoLayoutContainer
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Fill: =FrColorTheme.BackgroundColor
+                  FillPortions: =0
+                  Height: =900
+                  LayoutMode: =LayoutMode.Auto
+                Children:
+                - conMainMySubmissionsDS:
+                    Control: GroupContainer
+                    Variant: verticalAutoLayoutContainer
+                    Properties:
+                      AlignInContainer: =AlignInContainer.Start
+                      DropShadow: =DropShadow.None
+                      FillPortions: =0.85
+                      Height: =890
+                      LayoutDirection: =LayoutDirection.Vertical
+                      LayoutGap: =15
+                      LayoutMode: =LayoutMode.Auto
+                      PaddingLeft: =20
+                      PaddingRight: =10
+                      PaddingTop: =20
+                      RadiusBottomLeft: =0
+                      RadiusBottomRight: =0
+                      RadiusTopLeft: =0
+                      RadiusTopRight: =0
+                    Children:
+                    - conMySubmissionsDS:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          BorderColor: =FrColorTheme.conBorderColor
+                          BorderThickness: =1
+                          DropShadow: =DropShadow.None
+                          Fill: =RGBA(255, 255, 255, 1)
+                          FillPortions: =0
+                          Height: =420
+                          LayoutAlignItems: =LayoutAlignItems.Stretch
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutMinHeight: =420
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingLeft: =20
+                          PaddingRight: =20
+                          RadiusBottomLeft: =10
+                          RadiusBottomRight: =10
+                          RadiusTopLeft: =10
+                          RadiusTopRight: =10
+                        Children:
+                        - galRecentActivityDS_1:
+                            Control: Gallery
+                            Variant: galleryVertical
+                            Properties:
+                              Items: |-
+                                =Sort(Filter(Applications, Status.Value <> "Closed")
+                                ,Created,SortOrder.Descending)
+                              WrapCount: =3
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DelayItemLoading: =true
+                              Fill: =Color.White
+                              Layout: =Layout.Vertical
+                              LayoutMinHeight: =
+                              ShowScrollbar: =false
+                              TemplateSize: =180
+                              Width: =Parent.Width
+                            Children:
+                            - Button2:
+                                Control: Classic/Button
+                                Properties:
+                                  OnSelect: "=Navigate('Submissions Summary Screen',ScreenTransition.None,{gblSelectedSubmission:ThisItem});\r\nSet(gblSelectedSubmission1,ThisItem);\r\nSet(MilestoneSelectedSubmission,ThisItem);\r\nSet(VarSelectedTab,\"Submission Details\");\r\nClearCollect(ColTask,[\r\n    {\r\n        StageValue:1,\r\n        Name: \"Data Collection\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"System\",\r\n        NavigateTo:'Submissions Summary Screen'\r\n\r\n        \r\n    },\r\n    {\r\n        StageValue:2,\r\n        Name: \"Submission Review \",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Underwriting Manager\",\r\n        NavigateTo:'Submission Review'\r\n        \r\n    },\r\n    {\r\n        StageValue:3,\r\n        Name: \"Risk Analysis\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Risk Manager\",\r\n        NavigateTo:'Risk Analysis'\r\n        \r\n    },\r\n     {\r\n        StageValue:4,\r\n        Name: \"Financial Analysis\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Finance Team\",\r\n        NavigateTo:'Financial Analysis'\r\n        \r\n    },\r\n    {\r\n        StageValue:5,\r\n        Name: \"Technical Evaluation\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Shakti Singh\",\r\n        NavigateTo:'Technicial Evaluation'\r\n        \r\n    },\r\n    {\r\n        StageValue:6,\r\n        Name: \"Pricing & Terms\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Reinsurance Underwriter\",\r\n        NavigateTo:'Pricing Screen'\r\n        \r\n    },\r\n    {\r\n        StageValue:7,\r\n        Name: \"Compliance Check\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Compliance Team\",\r\n        NavigateTo:'Compliance Screen'\r\n        \r\n    },\r\n    {\r\n        StageValue:8,\r\n        Name: \"Final Decision\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Cheif Underwriter\",\r\n        NavigateTo:'Final Decision'\r\n        \r\n    }\r\n]);"
+                                  Text: =
+                                  BorderColor: =
+                                  BorderStyle: =BorderStyle.None
+                                  BorderThickness: =0
+                                  Color: =RGBA(0, 0, 0, 0)
+                                  DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                  DisabledColor: =RGBA(0, 0, 0, 0)
+                                  DisabledFill: =RGBA(0, 0, 0, 0)
+                                  Fill: =RGBA(0, 0, 0, 0)
+                                  Height: =galRecentActivityDS_1.TemplateHeight
+                                  HoverBorderColor: =
+                                  HoverColor: =RGBA(0, 0, 0, 0)
+                                  HoverFill: =
+                                  Width: =galRecentActivityDS_1.TemplateWidth
+                            - conActivityGalDataDS_1:
+                                Control: GroupContainer
+                                Variant: verticalAutoLayoutContainer
+                                Properties:
+                                  DropShadow: =DropShadow.None
+                                  Fill: =FrColorTheme.BackgroundColor
+                                  Height: =Parent.TemplateHeight-10
+                                  LayoutDirection: =LayoutDirection.Vertical
+                                  LayoutGap: =5
+                                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                                  LayoutMode: =LayoutMode.Auto
+                                  PaddingBottom: =10
+                                  PaddingLeft: =10
+                                  PaddingRight: =10
+                                  PaddingTop: =10
+                                  RadiusBottomLeft: =10
+                                  RadiusBottomRight: =10
+                                  RadiusTopLeft: =10
+                                  RadiusTopRight: =10
+                                  Width: |-
+                                    =//Parent.Width*.45
+                                    Parent.TemplateWidth*.95
+                                  X: =(Parent.TemplateWidth-Self.Width)/2
+                                  Y: =(Parent.TemplateHeight-Self.Height)/2
+                                Children:
+                                - conActivityId&TagDS:
+                                    Control: GroupContainer
+                                    Variant: horizontalAutoLayoutContainer
+                                    Properties:
+                                      DropShadow: =DropShadow.None
+                                      FillPortions: =0
+                                      Height: =Parent.Height*.20
+                                      LayoutAlignItems: =LayoutAlignItems.Center
+                                      LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                      LayoutMode: =LayoutMode.Auto
+                                      PaddingRight: =10
+                                      RadiusBottomLeft: =0
+                                      RadiusBottomRight: =0
+                                      RadiusTopLeft: =0
+                                      RadiusTopRight: =0
+                                      Width: =Parent.Width
+                                    Children:
+                                    - lblActivityIdDS_1:
+                                        Control: Label
+                                        Properties:
+                                          OnSelect: =
+                                          Text: |+
+                                            ="Case ID : 328378"&ThisItem.ID
+                                          Color: =FrColorTheme.lightSecondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =20
+                                          Size: |+
+                                            =FrColorTheme.labeltextStyle.fontSize
+                                    - Container10_6:
+                                        Control: GroupContainer
+                                        Variant: manualLayoutContainer
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.SetByContainer
+                                          DropShadow: =DropShadow.None
+                                          Fill: =If(ThisItem.Status.Value="New",FrColorTheme.ColorStatusNewFill,ThisItem.Status.Value="Closed",FrColorTheme.ColorStatusResolvedFill,ThisItem.Status.Value="In Progress",FrColorTheme.ColorStatusInprogressFill)
+                                          FillPortions: =0
+                                          Height: =Parent.Height*.90
+                                          RadiusBottomLeft: =8
+                                          RadiusBottomRight: =8
+                                          RadiusTopLeft: =8
+                                          RadiusTopRight: =8
+                                          Width: =If(Label2_72.Text="New",50,Len(Label2_72.Text)*9.8)
+                                        Children:
+                                        - Label2_72:
+                                            Control: Label
+                                            Properties:
+                                              Text: =ThisItem.Status.Value
+                                              Align: =Align.Center
+                                              Color: =RGBA(255, 255, 255, 1)
+                                              FontWeight: =FontWeight.Semibold
+                                              Size: =11
+                                              Width: =Parent.Width
+                                              X: =(Parent.Width-Self.Width)/2
+                                              Y: =(Parent.Height-Self.Height)/2
+                                - Container57:
+                                    Control: GroupContainer
+                                    Variant: horizontalAutoLayoutContainer
+                                    Properties:
+                                      DropShadow: =DropShadow.None
+                                      FillPortions: =0
+                                      Height: =40
+                                      LayoutMode: =LayoutMode.Auto
+                                    Children:
+                                    - lblActivityDateDS_1:
+                                        Control: Label
+                                        Properties:
+                                          OnSelect: =
+                                          Text: =ThisItem.'Policy Type'
+                                          FillPortions: =1
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FrColorTheme.galLabel.fontWeight
+                                          Size: =FrColorTheme.galLabel.fontSize
+                                          Width: =Parent.Width*.90
+                                          Y: =lblActivityIdDS_1.Height
+                                    - lblActivityDateDS_3:
+                                        Control: Label
+                                        Properties:
+                                          OnSelect: =
+                                          Text: =Round((ThisItem.'STAGE NUMBER' / 9) * 100, 0) & "%"
+                                          Align: =Align.Right
+                                          FillPortions: =1
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FrColorTheme.galLabel.fontWeight
+                                          PaddingRight: =20
+                                          Size: =FrColorTheme.galLabel.fontSize
+                                          Width: =Parent.Width*.90
+                                          Y: =lblActivityIdDS_1.Height
+                                - Container41:
+                                    Control: GroupContainer
+                                    Variant: horizontalAutoLayoutContainer
+                                    Properties:
+                                      DropShadow: =DropShadow.None
+                                      FillPortions: =0
+                                      Height: =30
+                                      LayoutMode: =LayoutMode.Auto
+                                    Children:
+                                    - lblCountOfTotalSubmissionsDS_1:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'Coverage Amount'
+                                          AlignInContainer: =AlignInContainer.Center
+                                          Color: =FrColorTheme.primaryColor
+                                          FillPortions: =1
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                                          Height: =20
+                                          LayoutMinWidth: =50
+                                          PaddingBottom: =0
+                                          PaddingTop: =0
+                                          Size: =FrColorTheme.galLabel.fontSize
+                                          Width: =Parent.Width*.80
+                                          Y: =109
+                                    - lblCountOfTotalSubmissionsDS_2:
+                                        Control: Label
+                                        Properties:
+                                          Text: =Upper(ThisItem.'Type of Reinsurance ')
+                                          Align: =Align.Right
+                                          AlignInContainer: =AlignInContainer.Center
+                                          Color: =If(ThisItem.'Type of Reinsurance '="Treaty",FrColorTheme.ColorStatusResolvedTxt,ThisItem.'Type of Reinsurance '="Facultative",FrColorTheme.ColorStatusInprogressTxt,ThisItem.'Type of Reinsurance '="Facultative",FrColorTheme.ColorStatusInprogressTxt)
+                                          FillPortions: =1
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                                          Height: =20
+                                          LayoutMinWidth: =50
+                                          PaddingBottom: =0
+                                          PaddingTop: =0
+                                          Size: =FrColorTheme.galLabel.fontSize
+                                          Width: =Parent.Width*.80
+                                          Y: =109
+                                - conHorizontalProfileDS:
+                                    Control: GroupContainer
+                                    Variant: horizontalAutoLayoutContainer
+                                    Properties:
+                                      DropShadow: =DropShadow.None
+                                      FillPortions: =0
+                                      Height: =40
+                                      LayoutMinHeight: =20
+                                      LayoutMode: =LayoutMode.Auto
+                                      RadiusBottomLeft: =0
+                                      RadiusBottomRight: =0
+                                      RadiusTopLeft: =0
+                                      RadiusTopRight: =0
+                                    Children:
+                                    - imgTotalSubmissionDS_1:
+                                        Control: Image
+                                        Properties:
+                                          Image: ='USER-IMAGE'
+                                          AlignInContainer: =AlignInContainer.Stretch
+                                          Height: =50
+                                          ImagePosition: =ImagePosition.Fill
+                                          LayoutMinHeight: =20
+                                          RadiusBottomLeft: =25
+                                          RadiusBottomRight: =25
+                                          RadiusTopLeft: =25
+                                          RadiusTopRight: =25
+                                          Width: |-
+                                            =//Parent.Width*.12
+                                            40
+                                    - lblActivityDateDS_2:
+                                        Control: Label
+                                        Properties:
+                                          OnSelect: =
+                                          Text: =ThisItem.'Insurance Compant Representative Company'
+                                          AlignInContainer: =AlignInContainer.Stretch
+                                          Font: =FrColorTheme.fontStyle
+                                          LayoutMinHeight: =20
+                                          Size: =FrColorTheme.galLabel.fontSize
+                                          Width: =Parent.Width*.55
+                                          Y: =lblActivityIdDS_1.Height
+                                    - lblDateActivityDS_1:
+                                        Control: Label
+                                        Properties:
+                                          OnSelect: =
+                                          Text: =Text(ThisItem.Created,"dd/mm/yyyy")
+                                          Align: =Align.Right
+                                          AlignInContainer: =AlignInContainer.Center
+                                          Color: =FrColorTheme.lightSecondaryColor
+                                          FillPortions: =1
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =20
+                                          Size: |+
+                                            =FrColorTheme.labeltextStyle.fontSize
+                                          Width: =Parent.Width*.25
+                                          Y: =
+                        - conHeaderMySubmissionDS:
+                            Control: GroupContainer
+                            Variant: horizontalAutoLayoutContainer
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0.11
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutGap: =10
+                              LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                              LayoutMinHeight: =42
+                              LayoutMode: =LayoutMode.Auto
+                              PaddingRight: =10
+                              PaddingTop: =5
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =Parent.Width*.95
+                            Children:
+                            - lblRecentActivityDS_1:
+                                Control: Label
+                                Properties:
+                                  Text: ="SUBMISSION ASSIGNED TO ME "
+                                  AlignInContainer: =AlignInContainer.Center
+                                  Color: =FrColorTheme.secondaryColor
+                                  FillPortions: =1
+                                  Font: =FrColorTheme.fontStyle
+                                  FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                                  PaddingLeft: =conActivityGalDataDS_1.X+conActivityGalDataDS_1.PaddingLeft
+                                  Size: =FrColorTheme.titleStyle.fontSize
+                                  VerticalAlign: =VerticalAlign.Bottom
+                                  Width: =Parent.Width*.80
+                                  X: =
+                            - btnViewAllDS_1:
+                                Control: Classic/Button
+                                Properties:
+                                  OnSelect: =Navigate('Submissions Screen')
+                                  Text: ="View All"
+                                  BorderColor: =FrColorTheme.secondaryColor
+                                  BorderThickness: =1
+                                  Color: =FrColorTheme.secondaryColor
+                                  Fill: =FrColorTheme.baseColor
+                                  Height: =30
+                                  HoverColor: =RGBA(0, 0, 0, 1)
+                                  HoverFill: =RGBA(255, 255, 255, 1)
+                                  PressedColor: =Self.Color
+                                  PressedFill: =Self.Fill
+                                  Size: =12
+                                  Width: =100
+                            - Icon2:
+                                Control: Classic/Icon
+                                Variant: Reload
+                                Properties:
+                                  OnSelect: =Refresh(Applications)
+                                  Color: =FrColorTheme.primaryColor
+                                  Height: =25
+                                  Icon: =Icon.Reload
+                                  Width: =30
+                    - conAllSubmissinsSS_1:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          BorderColor: =FrColorTheme.conBorderColor
+                          BorderThickness: =1
+                          DropShadow: =DropShadow.None
+                          Fill: =RGBA(255, 255, 255, 1)
+                          FillPortions: =0
+                          Height: =430
+                          LayoutAlignItems: =LayoutAlignItems.Stretch
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutGap: =10
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingLeft: =20
+                          PaddingRight: =20
+                          RadiusBottomLeft: =20
+                          RadiusBottomRight: =20
+                          RadiusTopLeft: =20
+                          RadiusTopRight: =20
+                          Visible: =false
+                          Width: =Parent.Width-60
+                        Children:
+                        - Gallery2_1:
+                            Control: Gallery
+                            Variant: galleryVertical
+                            Properties:
+                              Items: =Tasks
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DelayItemLoading: =true
+                              FillPortions: =0
+                              Height: =300
+                              Layout: =Layout.Vertical
+                              LoadingSpinner: =LoadingSpinner.Data
+                              ShowScrollbar: =false
+                              TemplateSize: =55
+                              Width: =Container8_1.Width
+                            Children:
+                            - Container9_1:
+                                Control: GroupContainer
+                                Variant: horizontalAutoLayoutContainer
+                                Properties:
+                                  DropShadow: =DropShadow.None
+                                  Fill: =FrColorTheme.BackgroundColor
+                                  Height: =Parent.TemplateHeight
+                                  LayoutAlignItems: =LayoutAlignItems.Center
+                                  LayoutGap: =5
+                                  LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                  LayoutMode: =LayoutMode.Auto
+                                  PaddingLeft: =10
+                                  PaddingRight: =10
+                                  RadiusBottomLeft: =10
+                                  RadiusBottomRight: =10
+                                  RadiusTopLeft: =10
+                                  RadiusTopRight: =10
+                                  Width: =Gallery2_1.TemplateWidth
+                                  Y: =(Gallery2_1.TemplateHeight-Self.Height)/2
+                                Children:
+                                - Label2_38:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="328378"&ThisItem.'Case ID'
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Semibold
+                                      LayoutMinWidth: =80
+                                      Size: =10
+                                      Width: =Label2_29.Width
+                                - Label2_39:
+                                    Control: Label
+                                    Properties:
+                                      Text: |-
+                                        =//ThisItem.submission
+                                        "Verification Of Documents"
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Semibold
+                                      LayoutMinWidth: =400
+                                      Size: =10
+                                      Width: =Label2_30.Width
+                                - Container15:
+                                    Control: GroupContainer
+                                    Variant: manualLayoutContainer
+                                    Properties:
+                                      DropShadow: =DropShadow.None
+                                      FillPortions: =0
+                                      LayoutMinHeight: =0
+                                      RadiusBottomLeft: =0
+                                      RadiusBottomRight: =0
+                                      RadiusTopLeft: =0
+                                      RadiusTopRight: =0
+                                      Width: =Label2_31.Width
+                                    Children:
+                                    - Image4_2:
+                                        Control: Image
+                                        Properties:
+                                          Image: ='Mask group (2)'
+                                          Height: =35
+                                          RadiusBottomLeft: =100
+                                          RadiusBottomRight: =100
+                                          RadiusTopLeft: =100
+                                          RadiusTopRight: =100
+                                          Width: =Self.Height
+                                          Y: =13
+                                    - Label2_40:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'Created By'.Email
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          Size: =10
+                                          Width: =Parent.Width*.80
+                                          X: =Image4_2.Width
+                                          Y: =10
+                                - Label2_43:
+                                    Control: Label
+                                    Properties:
+                                      Text: =Text(ThisItem.Created,"dd/mm/yyyy")
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Semibold
+                                      PaddingLeft: =20
+                                      Size: =10
+                                      Width: =Label2_32.Width
+                                - Container10_5:
+                                    Control: GroupContainer
+                                    Variant: manualLayoutContainer
+                                    Properties:
+                                      AlignInContainer: =AlignInContainer.SetByContainer
+                                      DropShadow: =DropShadow.None
+                                      Fill: =If(ThisItem.Priority.Value="High",FrColorTheme.ColorPriorityHighFill,ThisItem.Priority.Value="Medium",FrColorTheme.ColorPriorityMediumFill,ThisItem.Priority.Value="Low",FrColorTheme.ColorPriorityLowFill)
+                                      FillPortions: =0
+                                      Height: =30
+                                      RadiusBottomLeft: =8
+                                      RadiusBottomRight: =8
+                                      RadiusTopLeft: =8
+                                      RadiusTopRight: =8
+                                      Width: =Label2_64.Width-10
+                                    Children:
+                                    - Label2_71:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.Priority.Value
+                                          Align: =Align.Center
+                                          Color: =If(ThisItem.Priority.Value="High",FrColorTheme.ColorPriorityHighText,ThisItem.Priority.Value="Medium",FrColorTheme.ColorPriorityMediumText,ThisItem.Priority.Value="Low",FrColorTheme.ColorPriorityLowText)
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          Size: =10
+                                          Width: =Parent.Width
+                                          X: =(Parent.Width-Self.Width)/2
+                                          Y: =(Parent.Height-Self.Height)/2
+                                - Container58:
+                                    Control: GroupContainer
+                                    Variant: horizontalAutoLayoutContainer
+                                    Properties:
+                                      DropShadow: =DropShadow.None
+                                      FillPortions: =0
+                                      LayoutJustifyContent: =LayoutJustifyContent.Center
+                                      LayoutMinHeight: =0
+                                      LayoutMode: =LayoutMode.Auto
+                                      Width: =Label2_36.Width-10
+                                    Children:
+                                    - Container10_1:
+                                        Control: GroupContainer
+                                        Variant: manualLayoutContainer
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Center
+                                          Fill: =If(ThisItem.Status.Value="New",FrColorTheme.ColorStatusNewFill,ThisItem.Status.Value="Completed",FrColorTheme.ColorStatusResolvedFill,ThisItem.Status.Value="In-Progress",FrColorTheme.ColorStatusInprogressFill)
+                                          FillPortions: =0
+                                          Height: =30
+                                          RadiusBottomLeft: =8
+                                          RadiusBottomRight: =8
+                                          RadiusTopLeft: =8
+                                          RadiusTopRight: =8
+                                          Width: =100
+                                        Children:
+                                        - Label2_45:
+                                            Control: Label
+                                            Properties:
+                                              Text: =ThisItem.Status.Value
+                                              Align: =Align.Center
+                                              Color: =If(ThisItem.Status.Value="New",FrColorTheme.ColorStatusNewTxt,ThisItem.Status.Value="Completed",FrColorTheme.ColorStatusResolvedTxt,ThisItem.Status.Value="In-Progress",FrColorTheme.ColorStatusInprogressTxt)
+                                              Font: =FrColorTheme.fontStyle
+                                              FontWeight: =FontWeight.Semibold
+                                              Height: =30
+                                              Size: =10
+                                              Width: =Parent.Width
+                                              X: =(Parent.Width-Self.Width)/2
+                                              Y: =(Parent.Height-Self.Height)/2
+                                - Icon1_1:
+                                    Control: Classic/Icon
+                                    Variant: ChevronLeft
+                                    Properties:
+                                      Color: =FrColorTheme.primaryColor
+                                      Height: =20
+                                      Icon: =Icon.More
+                                      Width: =20
+                        - conHeaderMySubmissionDS_1:
+                            Control: GroupContainer
+                            Variant: horizontalAutoLayoutContainer
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =42
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutGap: =10
+                              LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                              LayoutMinHeight: =40
+                              LayoutMode: =LayoutMode.Auto
+                              PaddingRight: =10
+                              PaddingTop: =5
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                            - lblRecentActivityDS_3:
+                                Control: Label
+                                Properties:
+                                  Text: ="MY TASKS"
+                                  Color: =FrColorTheme.secondaryColor
+                                  FillPortions: =1
+                                  Font: =FrColorTheme.fontStyle
+                                  FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                                  PaddingLeft: =conActivityGalDataDS_1.X+conActivityGalDataDS_1.PaddingLeft
+                                  Size: =FrColorTheme.titleStyle.fontSize
+                                  VerticalAlign: =VerticalAlign.Bottom
+                                  Width: =Parent.Width*.80
+                                  X: =
+                            - btnViewAllDS:
+                                Control: Classic/Button
+                                Properties:
+                                  OnSelect: =Navigate('Tasks Screen')
+                                  Text: ="View All"
+                                  BorderColor: =FrColorTheme.secondaryColor
+                                  BorderThickness: =1
+                                  Color: =FrColorTheme.secondaryColor
+                                  Fill: =FrColorTheme.baseColor
+                                  Font: =FrColorTheme.fontStyle
+                                  Height: =30
+                                  HoverColor: =RGBA(0, 0, 0, 1)
+                                  HoverFill: =RGBA(255, 255, 255, 1)
+                                  PressedColor: =Self.Color
+                                  PressedFill: =Self.Fill
+                                  Size: =12
+                                  Width: =100
+                            - Icon2_1:
+                                Control: Classic/Icon
+                                Variant: Reload
+                                Properties:
+                                  OnSelect: =Refresh(Tasks)
+                                  Color: =FrColorTheme.primaryColor
+                                  Height: =25
+                                  Icon: =Icon.Reload
+                                  Width: =30
+                        - Container8_1:
+                            Control: GroupContainer
+                            Variant: horizontalAutoLayoutContainer
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              BorderThickness: =1
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =50
+                              LayoutGap: =5
+                              LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                              LayoutMode: =LayoutMode.Auto
+                              PaddingLeft: =10
+                              PaddingRight: =10
+                              RadiusBottomLeft: =10
+                              RadiusBottomRight: =10
+                              RadiusTopLeft: =10
+                              RadiusTopRight: =10
+                              Width: =Parent.Width-50
+                              X: =40
+                              Y: =40
+                            Children:
+                            - Label2_29:
+                                Control: Label
+                                Properties:
+                                  Text: ="TASK ID"
+                                  AlignInContainer: =AlignInContainer.Center
+                                  Font: =FrColorTheme.fontStyle
+                                  FontWeight: =FontWeight.Semibold
+                                  LayoutMinWidth: =80
+                                  Size: =11
+                                  Width: =Parent.Width*.10
+                            - Label2_30:
+                                Control: Label
+                                Properties:
+                                  Text: ="TASK DESCRIPTION"
+                                  AlignInContainer: =AlignInContainer.Center
+                                  Font: =FrColorTheme.fontStyle
+                                  FontWeight: =FontWeight.Semibold
+                                  LayoutMinWidth: =410
+                                  Size: =11
+                                  Width: =Parent.Width*.25
+                            - Label2_31:
+                                Control: Label
+                                Properties:
+                                  Text: ="ASSIGNED BY"
+                                  AlignInContainer: =AlignInContainer.Center
+                                  Font: =FrColorTheme.fontStyle
+                                  FontWeight: =FontWeight.Semibold
+                                  LayoutMinWidth: =200
+                                  Size: =11
+                                  Width: =Parent.Width*.18
+                            - Label2_32:
+                                Control: Label
+                                Properties:
+                                  Text: ="DUE DATE"
+                                  AlignInContainer: =AlignInContainer.Center
+                                  Font: =FrColorTheme.fontStyle
+                                  FontWeight: =FontWeight.Semibold
+                                  HoverColor: =
+                                  HoverFill: =Self.Color
+                                  LayoutMinWidth: =180
+                                  Size: =11
+                                  Width: =Parent.Width*.11
+                            - Label2_64:
+                                Control: Label
+                                Properties:
+                                  Text: ="PRIORITY"
+                                  AlignInContainer: =AlignInContainer.Center
+                                  Font: =FrColorTheme.fontStyle
+                                  FontWeight: =FontWeight.Semibold
+                                  Size: =11
+                                  Width: =Parent.Width*.10
+                            - Label2_36:
+                                Control: Label
+                                Properties:
+                                  Text: ="STATUS"
+                                  AlignInContainer: =AlignInContainer.Center
+                                  Font: =FrColorTheme.fontStyle
+                                  FontWeight: =FontWeight.Semibold
+                                  PaddingLeft: =20
+                                  Size: =11
+                                  Width: =Parent.Width*.15
+                    - conAllSubmissinsSS_4:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          BorderColor: =FrColorTheme.conBorderColor
+                          BorderThickness: =1
+                          DropShadow: =DropShadow.None
+                          Fill: =RGBA(255, 255, 255, 1)
+                          FillPortions: =0
+                          Height: =430
+                          LayoutAlignItems: =LayoutAlignItems.Stretch
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutGap: =5
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingBottom: =15
+                          PaddingLeft: =15
+                          PaddingRight: =15
+                          PaddingTop: =5
+                          RadiusBottomLeft: =20
+                          RadiusBottomRight: =20
+                          RadiusTopLeft: =20
+                          RadiusTopRight: =20
+                          Width: =Parent.Width-60
+                        Children:
+                        - conHeaderMySubmissionDS_4:
+                            Control: GroupContainer
+                            Variant: horizontalAutoLayoutContainer
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =40
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutGap: =10
+                              LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                              LayoutMinHeight: =40
+                              LayoutMode: =LayoutMode.Auto
+                              PaddingLeft: =20
+                              PaddingRight: =10
+                              PaddingTop: =5
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                            - lblRecentActivityDS_9:
+                                Control: Label
+                                Properties:
+                                  Text: ="TREATY REQUESTS"
+                                  AlignInContainer: =AlignInContainer.Center
+                                  Color: =FrColorTheme.secondaryColor
+                                  FillPortions: =1
+                                  Font: =FrColorTheme.fontStyle
+                                  FontWeight: =FontWeight.Bold
+                                  Height: =38
+                                  PaddingBottom: =0
+                                  PaddingLeft: =//conActivityGalDataDS_2.X+conActivityGalDataDS_2.PaddingLeft
+                                  PaddingTop: =0
+                                  Size: =FrColorTheme.titleStyle.fontSize
+                                  Width: =Parent.Width*.80
+                                  X: =
+                            - btnViewAllDS_72:
+                                Control: Classic/Button
+                                Properties:
+                                  OnSelect: =Navigate('Tasks Screen')
+                                  Text: ="View Completed"
+                                  BorderColor: =FrColorTheme.secondaryColor
+                                  BorderThickness: =1
+                                  Color: =FrColorTheme.secondaryColor
+                                  Fill: =FrColorTheme.baseColor
+                                  Font: =FrColorTheme.fontStyle
+                                  Height: =30
+                                  HoverColor: =RGBA(0, 0, 0, 1)
+                                  HoverFill: =RGBA(255, 255, 255, 1)
+                                  PressedColor: =Self.Color
+                                  PressedFill: =Self.Fill
+                                  RadiusBottomLeft: =0
+                                  RadiusBottomRight: =0
+                                  RadiusTopLeft: =0
+                                  RadiusTopRight: =0
+                                  Size: =12
+                                  Visible: =false
+                                  Width: =150
+                            - Icon2_4:
+                                Control: Classic/Icon
+                                Variant: Reload
+                                Properties:
+                                  OnSelect: =Refresh('Treaty Requests')
+                                  Color: =FrColorTheme.primaryColor
+                                  Height: =25
+                                  Icon: =Icon.Reload
+                                  Width: =30
+                        - Rectangle2_13:
+                            Control: Rectangle
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Center
+                              Fill: =FrColorTheme.primaryColor
+                              Height: =2
+                              Width: =Parent.Width*.98
+                        - Container26_2:
+                            Control: GroupContainer
+                            Variant: verticalAutoLayoutContainer
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutMode: =LayoutMode.Auto
+                              LayoutOverflowX: =LayoutOverflow.Scroll
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                            - Gallery2_7:
+                                Control: Gallery
+                                Variant: galleryVertical
+                                Properties:
+                                  OnSelect: "=Set(TREATY,ThisItem);\r\nNavigate(Screen1);\r\nClearCollect(ColTask,[\r\n    {\r\n        StageValue:1,\r\n        Name: \"Data Collection\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"System\",\r\n        NavigateTo:'Submissions Summary Screen'\r\n\r\n        \r\n    },\r\n    {\r\n        StageValue:2,\r\n        Name: \"Submission Review \",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Underwriting Manager\",\r\n        NavigateTo:'Submission Review'\r\n        \r\n    },\r\n    {\r\n        StageValue:3,\r\n        Name: \"Risk Analysis\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Risk Manager\",\r\n        NavigateTo:'Risk Analysis'\r\n        \r\n    },\r\n     {\r\n        StageValue:4,\r\n        Name: \"Financial Analysis\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Finance Team\",\r\n        NavigateTo:'Financial Analysis'\r\n        \r\n    },\r\n    {\r\n        StageValue:5,\r\n        Name: \"Technical Evaluation\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Shakti Singh\",\r\n        NavigateTo:'Technicial Evaluation'\r\n        \r\n    },\r\n    {\r\n        StageValue:6,\r\n        Name: \"Pricing & Terms\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Reinsurance Underwriter\",\r\n        NavigateTo:'Pricing Screen'\r\n        \r\n    },\r\n    {\r\n        StageValue:7,\r\n        Name: \"Compliance Check\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Compliance Team\",\r\n        NavigateTo:'Compliance Screen'\r\n        \r\n    },\r\n    {\r\n        StageValue:8,\r\n        Name: \"Final Decision\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Cheif Underwriter\",\r\n        NavigateTo:'Final Decision'\r\n        \r\n    }\r\n]);"
+                                  Items: =Sort('Treaty Requests',Created,SortOrder.Descending)
+                                  AlignInContainer: =AlignInContainer.SetByContainer
+                                  DelayItemLoading: =true
+                                  FillPortions: =0
+                                  Height: =300
+                                  Layout: =Layout.Vertical
+                                  LoadingSpinner: =LoadingSpinner.Data
+                                  ShowScrollbar: =false
+                                  TemplatePadding: =0
+                                  TemplateSize: =55
+                                  Width: =Container8_8.Width
+                                Children:
+                                - Button2_17:
+                                    Control: Classic/Button
+                                    Properties:
+                                      OnSelect: "=Set(TREATY,ThisItem);\r\nNavigate(Screen1);\r\nClearCollect(ColTask,[\r\n    {\r\n        StageValue:1,\r\n        Name: \"Data Collection\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Junior Underwriter\",\r\n        NavigateTo:Screen1\r\n\r\n        \r\n    },\r\n    {\r\n        StageValue:2,\r\n        Name: \"Risk Assessment \",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Senior Underwriter\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n    {\r\n        StageValue:3,\r\n        Name: \"Price Modeling\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Actuary\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n     {\r\n        StageValue:4,\r\n        Name: \"Peer Review\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Peer Underwriter\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n    {\r\n        StageValue:5,\r\n        Name: \"Negotiation\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Senior Underwriter\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n    {\r\n        StageValue:6,\r\n        Name: \"Final Approval\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Chief Underwriter\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n    {\r\n        StageValue:7,\r\n        Name: \"Documentation\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"UnderWriting Assistant\",\r\n        NavigateTo:Screen1\r\n        \r\n    },\r\n    {\r\n        StageValue:8,\r\n        Name: \"Final Decision\",\r\n        Case:ThisItem.ID,\r\n        source:\"Gourav Kumar\",\r\n        AssignedTo:\"Cheif Underwriter\",\r\n        NavigateTo:Screen1\r\n        \r\n    }\r\n]);\r\n"
+                                      BorderColor: =
+                                      BorderStyle: =BorderStyle.None
+                                      BorderThickness: =0
+                                      Color: =RGBA(0, 0, 0, 0)
+                                      DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                      DisabledColor: =RGBA(0, 0, 0, 0)
+                                      DisabledFill: =RGBA(0, 0, 0, 0)
+                                      Fill: =RGBA(0, 0, 0, 0)
+                                      Height: =55
+                                      HoverBorderColor: =
+                                      HoverColor: =RGBA(0, 0, 0, 0)
+                                      HoverFill: =
+                                      Width: =Gallery2_7.TemplateWidth
+                                - Rectangle2_15:
+                                    Control: Rectangle
+                                    Properties:
+                                      Fill: =ColorValue("#cccccc")
+                                      Height: =1
+                                      Width: =Parent.Width
+                                - Container9_28:
+                                    Control: GroupContainer
+                                    Variant: horizontalAutoLayoutContainer
+                                    Properties:
+                                      DropShadow: =DropShadow.None
+                                      Fill: =FrColorTheme.baseColor
+                                      Height: =Parent.TemplateHeight
+                                      LayoutAlignItems: =LayoutAlignItems.Center
+                                      LayoutGap: =5
+                                      LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                      LayoutMode: =LayoutMode.Auto
+                                      PaddingBottom: =1
+                                      PaddingLeft: =10
+                                      PaddingRight: =10
+                                      RadiusBottomLeft: =10
+                                      RadiusBottomRight: =10
+                                      RadiusTopLeft: =10
+                                      RadiusTopRight: =10
+                                      Width: =Gallery2_7.TemplateWidth
+                                      Y: =(Gallery2_7.TemplateHeight-Self.Height)/2
+                                    Children:
+                                    - Label2_246:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'Request ID'
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          LayoutMinWidth: =80
+                                          Size: =10
+                                          Width: =Label2_42.Width
+                                    - Label2_247:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'Cedent Name'
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          LayoutMinWidth: =400
+                                          Size: =10
+                                          Width: =Label2_46.Width
+                                    - Label2_248:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'Treaty Name'
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          Size: =10
+                                          Width: =Label2_190.Width
+                                    - Label2_249:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.LOB
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          Size: =10
+                                          Width: =Label2_191.Width
+                                    - Label2_250:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'Coverage Limit (Per Event)'
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          LayoutMinWidth: =80
+                                          Size: =10
+                                          Width: =Label2_192.Width
+                                    - Container23_4:
+                                        Control: GroupContainer
+                                        Variant: horizontalAutoLayoutContainer
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          FillPortions: =0
+                                          LayoutMinHeight: =0
+                                          LayoutMinWidth: =Label2_237.Width
+                                          LayoutMode: =LayoutMode.Auto
+                                          Width: =Label2_237.Width
+                                        Children:
+                                        - Container10_8:
+                                            Control: GroupContainer
+                                            Variant: manualLayoutContainer
+                                            Properties:
+                                              AlignInContainer: =AlignInContainer.Center
+                                              DropShadow: =DropShadow.None
+                                              Fill: =If(ThisItem.Status.Value="New",FrColorTheme.ColorStatusNewFill,ThisItem.Status.Value="Closed",ColorValue("#40d2af"),ThisItem.Status.Value="In progress",FrColorTheme.ColorStatusInprogressFill)
+                                              FillPortions: =0
+                                              Height: =30
+                                              LayoutMinWidth: =0
+                                              RadiusBottomLeft: =8
+                                              RadiusBottomRight: =8
+                                              RadiusTopLeft: =8
+                                              RadiusTopRight: =8
+                                              Width: =100
+                                            Children:
+                                            - Label2_245:
+                                                Control: Label
+                                                Properties:
+                                                  Text: =ThisItem.Status.Value
+                                                  Align: =Align.Center
+                                                  Color: =RGBA(255, 255, 255, 1)
+                                                  FontWeight: =FontWeight.Semibold
+                                                  Size: =11
+                                                  Width: =Parent.Width
+                                                  X: =(Parent.Width-Self.Width)/2
+                                                  Y: =(Parent.Height-Self.Height)/2
+                                    - Label2_251:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'# Policies'
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          LayoutMinWidth: =80
+                                          Size: =10
+                                          Width: =Label2_238.Width
+                                    - Label2_252:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'Effective Date'
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          LayoutMinWidth: =80
+                                          Size: =10
+                                          Width: =Label2_239.Width
+                                    - Label2_253:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.Exclusions
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          LayoutMinWidth: =80
+                                          Size: =10
+                                          Width: =Label2_240.Width
+                                    - Label2_254:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'End Date'
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          LayoutMinWidth: =80
+                                          Size: =10
+                                          Width: =Label2_241.Width
+                                    - Label2_255:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'Retention Amount (Per Event)'
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          LayoutMinWidth: =80
+                                          Size: =10
+                                          Width: =Label2_242.Width
+                                    - Label2_256:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'Reinsurance Premium'
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          LayoutMinWidth: =80
+                                          Size: =10
+                                          Width: =Label2_243.Width
+                                    - Label2_257:
+                                        Control: Label
+                                        Properties:
+                                          Text: =ThisItem.'Risk Score'
+                                          Color: =FrColorTheme.secondaryColor
+                                          Font: =FrColorTheme.fontStyle
+                                          FontWeight: =FontWeight.Semibold
+                                          LayoutMinWidth: =80
+                                          Size: =10
+                                          Width: =Label2_244.Width
+                            - Container8_8:
+                                Control: GroupContainer
+                                Variant: horizontalAutoLayoutContainer
+                                Properties:
+                                  AlignInContainer: =AlignInContainer.SetByContainer
+                                  DropShadow: =DropShadow.None
+                                  Fill: |-
+                                    =ColorValue("#f2f2f2")
+                                    //FrColorTheme.conBorderColor
+                                  FillPortions: =0
+                                  Height: =50
+                                  LayoutGap: =5
+                                  LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                  LayoutMode: =LayoutMode.Auto
+                                  PaddingLeft: =10
+                                  PaddingRight: =10
+                                  RadiusBottomLeft: =0
+                                  RadiusBottomRight: =0
+                                  RadiusTopLeft: =0
+                                  RadiusTopRight: =0
+                                  Width: =Parent.Width+800
+                                  X: =40
+                                  Y: =40
+                                Children:
+                                - Label2_42:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="ID"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LayoutMinWidth: =80
+                                      LineHeight: =1
+                                      Size: =10
+                                      Width: =75
+                                - Label2_46:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="CEDENT NAME"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LayoutMinWidth: =410
+                                      LineHeight: =1
+                                      Size: =10
+                                      Width: =200
+                                - Label2_190:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="TREATY NAME"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LayoutMinWidth: =200
+                                      LineHeight: =1
+                                      Size: =10
+                                - Label2_191:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="LINE OF BUSINESS"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      HoverColor: =
+                                      HoverFill: =Self.Color
+                                      LayoutMinWidth: =180
+                                      LineHeight: =1
+                                      Size: =10
+                                      Width: =200
+                                - Label2_192:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="COVERAGE LIMIT"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LineHeight: =1
+                                      Size: =10
+                                      Width: =180
+                                - Label2_237:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="STATUS"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LineHeight: =1
+                                      Size: =10
+                                      Width: =120
+                                - Label2_238:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="# POLICIES"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LineHeight: =1
+                                      Size: =10
+                                - Label2_239:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="EFFECTIVE DATE"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LineHeight: =1
+                                      Size: =10
+                                - Label2_240:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="EXCLUSIONS"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LineHeight: =1
+                                      Size: =10
+                                      Width: =200
+                                - Label2_241:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="EXPIRY DATE"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LineHeight: =1
+                                      Size: =10
+                                - Label2_242:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="RETENTION"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LineHeight: =1
+                                      Size: =10
+                                      Width: =180
+                                - Label2_243:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="REINSURANCE PREMIUM"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LineHeight: =1
+                                      Size: =10
+                                      Width: =200
+                                - Label2_244:
+                                    Control: Label
+                                    Properties:
+                                      Text: ="RISK SCORE"
+                                      AlignInContainer: =AlignInContainer.Center
+                                      AutoHeight: =true
+                                      Color: =FrColorTheme.secondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Bold
+                                      LineHeight: =1
+                                      Size: =10
+                                      Width: =200
+                - conExpectedDeadline&DueDateDS:
+                    Control: GroupContainer
+                    Variant: verticalAutoLayoutContainer
+                    Properties:
+                      AlignInContainer: =AlignInContainer.Start
+                      DropShadow: =DropShadow.None
+                      FillPortions: =0.25
+                      Height: =1300
+                      LayoutDirection: =LayoutDirection.Vertical
+                      LayoutGap: =15
+                      LayoutMode: =LayoutMode.Auto
+                      PaddingLeft: =10
+                      PaddingRight: =20
+                      PaddingTop: =20
+                      RadiusBottomLeft: =0
+                      RadiusBottomRight: =0
+                      RadiusTopLeft: =0
+                      RadiusTopRight: =0
+                    Children:
+                    - conRecentActivityDS_15:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          Fill: =RGBA(255, 255, 255, 1)
+                          Height: =500
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutMinWidth: =100
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingTop: =5
+                          RadiusBottomLeft: =10
+                          RadiusBottomRight: =10
+                          RadiusTopLeft: =10
+                          RadiusTopRight: =10
+                        Children:
+                        - galRecentActivityDS_5:
+                            Control: Gallery
+                            Variant: galleryVertical
+                            Properties:
+                              Items: =FrAlertsData1
+                              AlignInContainer: =AlignInContainer.Start
+                              DelayItemLoading: =true
+                              Fill: =Color.White
+                              Height: =Parent.Height*.90
+                              Layout: =Layout.Vertical
+                              LayoutMinHeight: =
+                              ShowScrollbar: =false
+                              TemplateSize: =150
+                              Width: =Parent.Width
+                            Children:
+                            - conActivityGalDataDS_5:
+                                Control: GroupContainer
+                                Variant: verticalAutoLayoutContainer
+                                Properties:
+                                  DropShadow: =DropShadow.None
+                                  Fill: =FrColorTheme.BackgroundColor
+                                  Height: =Parent.TemplateHeight
+                                  LayoutDirection: =LayoutDirection.Vertical
+                                  LayoutGap: =10
+                                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                                  LayoutMode: =LayoutMode.Auto
+                                  PaddingLeft: =10
+                                  RadiusBottomLeft: =10
+                                  RadiusBottomRight: =10
+                                  RadiusTopLeft: =10
+                                  RadiusTopRight: =10
+                                  Width: =Parent.Width*.9
+                                  X: =(Parent.TemplateWidth-Self.Width)/2
+                                Children:
+                                - lblActivityIdDS_5:
+                                    Control: Label
+                                    Properties:
+                                      OnSelect: =
+                                      Text: =ThisItem.caseID
+                                      Color: =FrColorTheme.lightSecondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Semibold
+                                      Height: =20
+                                      Size: |+
+                                        =FrColorTheme.labeltextStyle.fontSize
+                                      Width: =220
+                                - lblActivityDateDS_6:
+                                    Control: Label
+                                    Properties:
+                                      OnSelect: =
+                                      Text: =ThisItem.ActivityDescription
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FrColorTheme.galLabel.fontWeight
+                                      Height: =65
+                                      Size: =FrColorTheme.galLabel.fontSize
+                                      Width: =Parent.Width
+                                      Y: =lblActivityIdDS_5.Height
+                                - lblActivityIdDS_7:
+                                    Control: Label
+                                    Properties:
+                                      OnSelect: =
+                                      Text: =ThisItem.createdOn
+                                      Color: =FrColorTheme.lightSecondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Semibold
+                                      Height: =20
+                                      Size: |+
+                                        =FrColorTheme.labeltextStyle.fontSize
+                                      Width: =200
+                        - lblRecentActivityDS_67:
+                            Control: Label
+                            Properties:
+                              Text: ="ALERTS & NOTIFICATIONS"
+                              Color: =FrColorTheme.secondaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                              PaddingLeft: |+
+                                =conActivityGalDataDS_5.X+conActivityGalDataDS_5.PaddingLeft
+                              Size: =FrColorTheme.titleStyle.fontSize
+                              VerticalAlign: =VerticalAlign.Bottom
+                              Width: =Parent.Width
+                        - lbl_RequestIDVal_DS_22:
+                            Control: Label
+                            Properties:
+                              Text: ="TODAY"
+                              Color: =FrColorTheme.primaryColor
+                              FontWeight: =FontWeight.Bold
+                              Height: =30
+                              PaddingLeft: =20
+                              Size: =11
+                              VerticalAlign: =VerticalAlign.Top
+                              Visible: =false
+                              Width: =Parent.Width
+                    - conRecentActivityDS_3:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          Fill: =RGBA(255, 255, 255, 1)
+                          FillPortions: =0
+                          Height: =480
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutMinWidth: =100
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingTop: =5
+                          RadiusBottomLeft: =10
+                          RadiusBottomRight: =10
+                          RadiusTopLeft: =10
+                          RadiusTopRight: =10
+                          Visible: =false
+                        Children:
+                        - galRecentActivityDS_4:
+                            Control: Gallery
+                            Variant: galleryVertical
+                            Properties:
+                              Items: =colAlerts
+                              AlignInContainer: =AlignInContainer.Start
+                              DelayItemLoading: =true
+                              Fill: =Color.White
+                              Height: =240
+                              Layout: =Layout.Vertical
+                              LayoutMinHeight: =
+                              ShowScrollbar: =false
+                              TemplateSize: =110
+                              Width: =Parent.Width
+                            Children:
+                            - conActivityGalDataDS_4:
+                                Control: GroupContainer
+                                Variant: verticalAutoLayoutContainer
+                                Properties:
+                                  DropShadow: =DropShadow.None
+                                  Fill: =FrColorTheme.BackgroundColor
+                                  Height: =Parent.TemplateHeight*.80
+                                  LayoutDirection: =LayoutDirection.Vertical
+                                  LayoutGap: =10
+                                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                                  LayoutMode: =LayoutMode.Auto
+                                  PaddingLeft: =10
+                                  RadiusBottomLeft: =10
+                                  RadiusBottomRight: =10
+                                  RadiusTopLeft: =10
+                                  RadiusTopRight: =10
+                                  Width: =Parent.Width*.9
+                                  X: =(Parent.TemplateWidth-Self.Width)/2
+                                  Y: =10
+                                Children:
+                                - lblActivityIdDS_4:
+                                    Control: Label
+                                    Properties:
+                                      OnSelect: =
+                                      Text: =ThisItem.Label
+                                      Color: =FrColorTheme.lightSecondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Semibold
+                                      Height: =20
+                                      Size: |+
+                                        =FrColorTheme.labeltextStyle.fontSize
+                                - lblActivityDateDS_5:
+                                    Control: Label
+                                    Properties:
+                                      OnSelect: =
+                                      Text: =ThisItem.Description
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FrColorTheme.galLabel.fontWeight
+                                      Size: =FrColorTheme.galLabel.fontSize
+                                      Width: =Parent.Width
+                                      Y: =lblActivityIdDS_4.Height
+                        - lblRecentActivityDS_7:
+                            Control: Label
+                            Properties:
+                              Text: ="ALERTS"
+                              Color: =FrColorTheme.secondaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                              PaddingLeft: |+
+                                =conActivityGalDataDS_4.X+conActivityGalDataDS_4.PaddingLeft
+                              Size: =FrColorTheme.titleStyle.fontSize
+                              VerticalAlign: =VerticalAlign.Bottom
+                              Width: =Parent.Width
+                        - lbl_RequestIDVal_DS_21:
+                            Control: Label
+                            Properties:
+                              Text: ="TODAY"
+                              Color: =FrColorTheme.primaryColor
+                              FontWeight: =FontWeight.Bold
+                              Height: =30
+                              PaddingLeft: =20
+                              Size: =11
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =Parent.Width
+                    - conRecentActivityDS_4:
+                        Control: GroupContainer
+                        Variant: verticalAutoLayoutContainer
+                        Properties:
+                          DropShadow: =DropShadow.None
+                          Fill: =RGBA(255, 255, 255, 1)
+                          FillPortions: =0
+                          Height: =480
+                          LayoutDirection: =LayoutDirection.Vertical
+                          LayoutMinWidth: =100
+                          LayoutMode: =LayoutMode.Auto
+                          PaddingTop: =5
+                          RadiusBottomLeft: =10
+                          RadiusBottomRight: =10
+                          RadiusTopLeft: =10
+                          RadiusTopRight: =10
+                          Visible: =false
+                        Children:
+                        - galRecentActivityDS_6:
+                            Control: Gallery
+                            Variant: galleryVertical
+                            Properties:
+                              Items: |-
+                                =
+                                FrAlertsData
+                              AlignInContainer: =AlignInContainer.Start
+                              DelayItemLoading: =true
+                              Fill: =Color.White
+                              Height: =240
+                              Layout: =Layout.Vertical
+                              LayoutMinHeight: =
+                              ShowScrollbar: =false
+                              TemplateSize: =110
+                              Width: =Parent.Width
+                            Children:
+                            - conActivityGalDataDS_6:
+                                Control: GroupContainer
+                                Variant: verticalAutoLayoutContainer
+                                Properties:
+                                  DropShadow: =DropShadow.None
+                                  Fill: =FrColorTheme.BackgroundColor
+                                  Height: =Parent.TemplateHeight*.80
+                                  LayoutDirection: =LayoutDirection.Vertical
+                                  LayoutGap: =10
+                                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                                  LayoutMode: =LayoutMode.Auto
+                                  PaddingLeft: =10
+                                  RadiusBottomLeft: =10
+                                  RadiusBottomRight: =10
+                                  RadiusTopLeft: =10
+                                  RadiusTopRight: =10
+                                  Width: =Parent.Width*.9
+                                  X: =(Parent.TemplateWidth-Self.Width)/2
+                                  Y: =10
+                                Children:
+                                - lblActivityIdDS_6:
+                                    Control: Label
+                                    Properties:
+                                      OnSelect: =
+                                      Text: =ThisItem.caseID
+                                      Color: =FrColorTheme.lightSecondaryColor
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FontWeight.Semibold
+                                      Height: =20
+                                      Size: |+
+                                        =FrColorTheme.labeltextStyle.fontSize
+                                - lblActivityDateDS_7:
+                                    Control: Label
+                                    Properties:
+                                      OnSelect: =
+                                      Text: =ThisItem.ActivityDescription
+                                      Font: =FrColorTheme.fontStyle
+                                      FontWeight: =FrColorTheme.galLabel.fontWeight
+                                      Size: =FrColorTheme.galLabel.fontSize
+                                      Width: =Parent.Width
+                                      Y: =lblActivityIdDS_6.Height
+                        - lblRecentActivityDS_13:
+                            Control: Label
+                            Properties:
+                              Text: ="RECENT ACTIVITIES"
+                              Color: =FrColorTheme.secondaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FrColorTheme.labeltextStyle.fontWeight
+                              PaddingLeft: |+
+                                =conActivityGalDataDS_6.X+conActivityGalDataDS_6.PaddingLeft
+                              Size: =FrColorTheme.titleStyle.fontSize
+                              VerticalAlign: =VerticalAlign.Bottom
+                              Width: =Parent.Width
+                        - lbl_RequestIDVal_DS_23:
+                            Control: Label
+                            Properties:
+                              Text: ="TODAY"
+                              Color: =FrColorTheme.primaryColor
+                              Font: =FrColorTheme.fontStyle
+                              FontWeight: =FontWeight.Bold
+                              Height: =30
+                              PaddingLeft: =20
+                              Size: =11
+                              VerticalAlign: =VerticalAlign.Top
+                              Width: =Parent.Width
