@@ -1,4 +1,4 @@
-- NewScreen:
+- Dashboard Screen:
     Control: Screen
     Children:
     - conVerticalMainHeaderBodyDS:
